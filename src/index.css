@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-base-color: #3D0098;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -116,5 +120,38 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1{
+    @apply text-3xl lg:text-5xl font-semibold;
+  }
+  h2{
+    @apply text-4xl font-semibold;
+  }
+  h3{
+    @apply text-3xl font-semibold;
+  }
+  h4{
+    @apply text-2xl font-semibold;
+  }
+}
+
+@layer utilities{
+  .flex-center-all{
+    @apply flex items-center justify-center;
+  }
+  .flex-center-y{
+    @apply flex items-center;
+  }
+  .flex-center-x{
+    @apply flex justify-center;
+  }
+  .btn{
+    @apply max-sm:text-xs h-12 min-w-32 px-4 rounded-sm bg-base-color text-primary-foreground hover:bg-base-color/90 transition-colors;
+  }
+  .card{
+    @apply bg-base-color rounded-none max-w-[300px] text-white p-4;
+  }
+  .section{
+    @apply min-h-[40vh] flex items-center justify-center flex-col py-10;
   }
 }
