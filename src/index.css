@@ -154,4 +154,7 @@
   .section{
     @apply min-h-[40vh] flex items-center justify-center flex-col py-10;
   }
+  .image-fill{
+    @apply w-full h-full object-cover;
+  }
 }

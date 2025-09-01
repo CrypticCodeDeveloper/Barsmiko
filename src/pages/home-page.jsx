@@ -1,5 +1,12 @@
-import { Rocket, ArrowRight, Recycle, RecycleIcon } from "lucide-react";
+import { Rocket, ArrowRight, RecycleIcon, Building2,
+  Microscope,
+  Wrench,
+  TrendingUp,Workflow,
+  CreditCard,
+  FlaskConical,
+  } from "lucide-react";
 import { FaqsAccordion } from "../components/faq-accordion";
+import Marquee from "react-fast-marquee";
 
 const HomePage = () => {
   return (
@@ -18,10 +25,10 @@ const HomePage = () => {
 const FooterCTA = () => {
   return (
     <div className="section text-center">
-      <p className="uppercase text-base-color font-semibold text-2xl mb-2">
+      <h2 className="uppercase text-base-color font-semibold text-xl md:text-3xl lg:text-4xl max-w-2xl mb-2">
         Ready to simplify your hustle and scale with ease?
-      </p>
-      <p>Let Barsmiko be your unfair advantage.</p>
+      </h2>
+      <p className="text-lg mt-2">Let Barsmiko be your unfair advantage.</p>
       <div className="flex-center-y gap-4 mt-8">
         <button className="btn font-semibold">
           Start your Journey
@@ -36,7 +43,7 @@ const FooterCTA = () => {
 
 const FAQs = () => {
   return (
-    <div className="section bg-base-color">
+    <div className="section bg-base-color" id="faq">
        <h1 className="relative text-white mb-8">FAQs
         <div className="border-2 border-white w-[60%] mx-auto mt-1" />
       </h1>
@@ -64,16 +71,16 @@ const Partners = () => {
         <div className="border-2 border-base-color w-[60%] mx-auto mt-1" />
       </h1>
 
-      <div className="w-full flex-center-all overflow-x-auto px-2 my-8 gap-10">
+      <Marquee className="mt-8 flex-center-y md:!w-[80%] p-4" gradient={false} speed={50} pauseOnHover={false} >
         {
           logos.map((logo, i) => (
-            <img key={`partner-logo-${i}`} src={logo} alt={`Partner Logo ${i+1}`} className="h-8" />
+            <img key={`partner-logo-${i}`} src={logo} alt={`Partner Logo ${i+1}`} className="h-7 md:h-10 mx-6 md:mx-8" />
           )
           )
         }
-      </div>
+      </Marquee>
 
-      <p className="text-gray-800 mt-5">
+      <p className="text-gray-800 mt-5 text-center">
         We collaborate with industry leaders, forward-thinking founders, and mission-aligned organizations to bring powerful solutions to life.
       </p>
     </div>
@@ -81,20 +88,41 @@ const Partners = () => {
 }
 
 const WhyBarsmiko = () => {
+
+  const productPrinciples = [
+  {
+    text: "Built for real businesses, not tech demos",
+    icon: Building2,
+  },
+  {
+    text: "Backed by deep research & field-tested design",
+    icon: Microscope,
+  },
+  {
+    text: "Custom-fit to your needs — no fluff, no overwhelm",
+    icon: Wrench,
+  },
+  {
+    text: "Designed for scalability, simplicity, and long-term wins",
+    icon: TrendingUp,
+  },
+];
+
   return (
-    <div className="section !flex-col bg-base-color">
-      <div className="text-center">
+    <div className="section !flex-row max-[1112px]:!flex-col px-10 bg-base-color">
+      <div className="text-center mr-4">
         <h2 className="text-white">Why Barsmiko?</h2>
         <p className="text-gray-300 max-w-lg mt-1">
           We don’t just sell tools — we engineer smart systems that grow with you. Here’s why businesses trust Barsmiko
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 mt-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-7">
         {
-          new Array(4).fill().map((_,i) => (
-            <div key={`why-barsmiko-card-${i}`} className={`bg-white flex-center-all p-2 w-[300px] h-[170px] ${i == 1 || i == 2 ? " !bg-[#242424] !h-[200px] !text-white" : ""} ${i == 0 && "self-end"}`}>
-              <p>Built for real businesses, not tech demos</p>
+          productPrinciples.map((product,i) => (
+            <div key={`why-barsmiko-card-${i}`} className={`bg-white flex-center-all !flex-col text-center text-lg font-semibold p-2 w-[250px] h-[170px] ${i == 1 || i == 2 ? " !bg-[#242424] !h-[200px] !text-white" : ""} ${i == 0 && "self-end"}`}>
+              <product.icon className="size-10 mb-4" />
+              <p>{product.text}</p>
             </div>
           ))
         }
@@ -165,10 +193,34 @@ const WhoWeHelp = () => {
 }
 
 const WhatWeDo = () => {
+  const offerings = [
+  {
+    title: "Intelligent Automation",
+    text: "Cut the manual work. We build backend systems that streamline your operations, save time, and scale with you.",
+    icon: Workflow,
+  },
+  {
+    title: "Seamless Fintech (featuring PapayMoni)",
+    text: "Modern financial tools designed for real-world transactions — fast, reliable, and user-first.",
+    icon: CreditCard,
+  },
+  {
+    title: "Research & Digital Innovation",
+    text: "From idea to MVP to full product, we bring clarity, creativity, and technical depth to every project.",
+    icon: FlaskConical,
+  },
+  {
+    title: "Enterprise Services",
+    text: "Custom software, internal tools, dashboards, and more — built to modernize and transform how large organizations operate.",
+    icon: Building2,
+  },
+];
+
+
   return (
     <div className="section text-black px-10">
 
-      <div className="w-full flex-center-y flex-col justify-center gap-10">
+      <div className="w-full flex-center-y flex-col lg:flex-row justify-center gap-10">
 
         <div>
           <h3 className="font-semibold text-xl text-base-color tracking-wider">WHAT WE DO</h3>
@@ -185,20 +237,20 @@ From research-driven innovation to smart automation and intuitive fintech platfo
       </div>
 
 
-      <div className="mt-8 gap-4 flex-col flex-center-all">
+      <div className="mt-8 gap-4 flex-col grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 
         {
-          new Array(4).fill().map((_, i) => (
+          offerings.map((offering, i) => (
             <div className="card" key={`what-we-do-card-${i}`}>
             <div className="flex-center-y justify-between">
-              <RecycleIcon size={30} />
+              <offering.icon size={30} />
               <h2 className="text-gray-200">{String(i+1).padStart(2,0)}</h2>
             </div>
 
-            <h4 className="text-xl my-4">Intelligent Automation</h4>
+            <h4 className="text-xl my-4">{offering.title}</h4>
 
             <p className="text-sm">
-               Cut the manual work. We build backend systems that streamline your operations, save time, and scale with you.
+               {offering.text}
             </p>
         </div>
           ))
@@ -220,11 +272,11 @@ const Hero = () => {
       />
       <div className="w-full h-full bg-gradient-to-r from-white/80 via-white/50 to-transparent absolute -z-10" />
       <div className="h-full w-full flex-center-all flex-col px-4">
-        <h1 className="text-base-color text-4xl font-bold mb-4 flex-center-y flex-col text-center gap-3">
+        <h1 className="text-base-color text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 flex-center-y flex-col text-center gap-3">
           <Rocket className="size-12" />
           Smart Tech for Bold Builders.
         </h1>
-        <h3 className="text-sm max-w-2xl text-center text-gray-800">
+        <h3 className="text-sm md:text-lg max-w-xl text-center text-gray-800">
           Build, scale, and automate — without the chaos. From fintech to ops,
           Barsmiko gives you the systems to grow smarter.
         </h3>
