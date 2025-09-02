@@ -154,7 +154,7 @@ const OurMission = () => {
           </p>
           <h1 className="text-4xl max-w-xl text-center">
             Our Mission is to{" "}
-            <span className="bg-base-color p-2 font-semibold text-white">
+            <span className="bg-base-color p-1 font-semibold text-white">
               Empower
             </span>{" "}
             Through Innovation
@@ -176,36 +176,6 @@ const OurMission = () => {
             flow, so you can focus on the work that truly matters.
           </p>
         </div>
-      </div>
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="min-h-[40vh] w-full relative text-white">
-      <img
-        src="/about-us.jpg"
-        alt=""
-        className="w-full h-full object-cover absolute -z-10"
-      />
-      <div className="w-full h-full bg-black/70 absolute -z-10" />
-
-      <div className="w-full h-full p-6 py-10 lg:p-10 flex-center-all flex-col lg:flex-row gap-6 lg:gap-10">
-        <div className="min-w-[50%] flex-col">
-          <h3 className="mb-3 text-base-color bg-white p-2 w-fit max-md:text-xl">ABOUT US</h3>
-          <h2 className="max-w-2xl text-3xl">Technology That Moves Businesses Forward</h2>
-        </div>
-
-        <p className="text-sm max-w-xl text-gray-200">
-          Barsmiko started with a simple belief: technology should work for real
-          businesses — not the other way around. We have seen the hustle: messy
-          spreadsheets, manual tracking, hours wasted on what should be
-          seamless. That’s where we come in. We design systems that eliminate
-          chaos, automate the boring stuff, and create clarity for people who
-          just want to run their business better. From small teams to scaling
-          startups, we help bold builders simplify, scale, and thrive.
-        </p>
       </div>
     </div>
   );

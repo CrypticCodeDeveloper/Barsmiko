@@ -51,7 +51,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex-center-y justify-between max-w-7xl mx-auto h-20 px-4">
-        <img src="/logo.png" alt="logo" className="h-10 md:h-12" />
+        <img src="/logo.png" alt="logo" className="h-28 md:h-26" />
         <ul className="flex max-[898px]:hidden gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>

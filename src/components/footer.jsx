@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="w-full bg-base-color text-white p-8 min-h-[40vh]">
         <div className="flex flex-col gap-10">
             <div>
-                <img src="/logo.png" alt="Barsmiko Logo" className="h-16" />
+                <img src="/logo.png" alt="Barsmiko Logo" className="h-28" />
             <p className="max-w-sm mt-4">
                 Build, scale, and automate — without the chaos. From fintech to ops, Barsmiko gives you the systems to grow smarter.
             </p>

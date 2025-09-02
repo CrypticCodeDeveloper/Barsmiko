@@ -43,7 +43,7 @@ const MobileMenu = ({
           </button>
         </div>
 
-        <img src="/logo.png" className="h-16 mb-8" alt="" />
+        <img src="/logo.png" className="h-28 mb-6" alt="" />
 
         {/* Menu Links */}
 

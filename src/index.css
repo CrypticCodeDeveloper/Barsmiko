@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-base-color: #3D0098;
+  --color-base-color: #324CAD;
 }
 
 @theme inline {
