@@ -31,7 +31,7 @@ const MobileMenu = ({
       {/* Slide-in Menu */}
 
       <div
-        className={`fixed top-0 right-0 h-full w-full max-w-[500px] bg-white z-50 shadow-lg transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-full max-w-[500px] px-8 bg-white z-50 shadow-lg transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -43,11 +43,13 @@ const MobileMenu = ({
           </button>
         </div>
 
+        <img src="/logo.png" className="h-16 mb-8" alt="" />
+
         {/* Menu Links */}
 
-        <ul className="flex flex-col px-8 gap-6">
+        <ul className="flex flex-col gap-6">
                   {navLinks.map((link) => (
-                    <li key={link.name}>
+                    <li onClick={() => setIsOpen(false)} className="text-lg" key={link.name}>
                       {link.isHash ? (
                         <a
                           href={link.href}

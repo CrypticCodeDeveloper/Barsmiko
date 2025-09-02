@@ -157,4 +157,10 @@
   .image-fill{
     @apply w-full h-full object-cover;
   }
+  .form-input{
+    @apply rounded-none min-w-[250px] border-black;
+  }
+  .form-label{
+    @apply text-lg;
+  }
 }

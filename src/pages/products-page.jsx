@@ -8,23 +8,56 @@ import {
   ArrowRight,
   BellDotIcon
 } from "lucide-react";
+import SectionHeader from "../components/section-header";
+import SectionFooterCta from "../components/section-footer.cta";
 
 const ProductsPage = () => {
   return (
-    <div className="pb-10">
-      <Header />
+    <div>
+      <SectionHeader
+        sectionTitle="OUR PRODUCTS"
+        sectionSubTitle="Tools That Power Smarter Business"
+        text="From financial clarity to operational flow, our products are built to make business easier — not harder. Explore PapayMoni and what’s next from Barsmiko."
+        btns={[
+          {
+            text: "Join the PapayMoni Waitlist",
+            onClick: () => alert("Join the PapayMoni Waitlist"),
+          },
+          {
+            text: "Talk to Our Product Team",
+            onClick: () => alert("Talk to Our Product Team"),
+          },
+        ]}
+      />
       <FeaturedProducts />
       <ComingSoonProducts />
       <WhyWeBuildTheWayWeBuild />
+      <SectionFooterCta
+        title="Be the First to Try What We’re Building.
+"
+        subTitle="Get early access, updates, and insider perks on PapayMoni and our future product drops.
+
+"
+        btns={[
+          {
+            text: "Join the Waitlist",
+            onClick: () => alert("Join the Waitlist"),
+          },
+          {
+            text: "Talk to Our Product Team",
+            onClick: () => alert("Talk to Our Product Team"),
+          },
+        ]}
+      />
     </div>
   );
 };
 
 const WhyWeBuildTheWayWeBuild = () => {
     return (
-        <div className="section bg-base-color text-white">
+        <div className="section px-4 max-lg:text-center bg-base-color text-white">
             <h1>Why We Build the Way We Do</h1>
-            <p className="uppercase text-lg font-semibold mt-2">Products Built for Real Business, Not Just Big Business.</p>
+            <p className="uppercase text-sm lg:text-lg font-semibold mt-2">Products Built for Real Business, Not Just Big Business.</p>
             <p className="mt-6 text-gray-200 max-w-2xl">
                 Most tools weren’t made for how small businesses actually work.
  We build software that meets you where you are — intuitive, powerful, and tailored to your hustle. Whether you’re selling from your DMs or scaling a startup, we’re creating tools that fit your reality.
@@ -54,7 +87,7 @@ const ComingSoonProducts = () => {
     ]
 
   return (
-    <div className="section">
+    <div className="section px-4">
       <div className="flex-center-y flex-col">
         <h1 className="max-w-2xl text-center">
           Coming Soon: More Digital Tools from Barsmiko
@@ -68,7 +101,7 @@ const ComingSoonProducts = () => {
         </p>
       </div>
 
-      <div className="mt-8 grid grid-cols-3 gap-10">
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {ComingSoonProducts.map((product, i) => (
           <div key={`coming-soon-product-${i}`} className="w-[300px] min-h-[300px] rounded-lg overflow-hidden">
             <div className="w-full h-[150px] flex-center-all overflow-hidden relative">
@@ -137,10 +170,10 @@ const FeaturedProducts = () => {
         Featured Products
       </p>
 
-      <div className="flex-center-y justify-between w-full px-10 mt-10">
+      <div className="flex-center-y flex-col-reverse lg:flex-row lg:justify-between gap-8 w-full px-4 lg:px-10 mt-10">
         <div className="max-w-2xl">
-          <h2>PapayMoni: Money, Made Manageable</h2>
-          <p className="mt-2 font-semibold text-lg text-base-color">
+          <h2 className="text-3xl">PapayMoni: Money, Made Manageable</h2>
+          <p className="mt-2 font-semibold text-sm lg:text-lg text-base-color">
             Your hustle deserves better than bank alerts and mental math.
             PapayMoni is the business wallet that thinks like a business owner.
           </p>
@@ -162,7 +195,7 @@ const FeaturedProducts = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-[600px] h-[400px] mt-5 overflow-hidden rounded-lg flex-center-all relative">
+        <div className="w-full mb-8 max-w-[600px] h-[400px] mt-5 overflow-hidden rounded-lg flex-center-all relative">
           <img
             src="/PaPaymoni.jpg"
             className="image-fill absolute -z-10"
@@ -174,32 +207,6 @@ const FeaturedProducts = () => {
             <ArrowRight className="size-6" />
           </button>
         </div>
-      </div>
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="h-[40vh] w-full relative text-white">
-      <img
-        src="/about-us.jpg"
-        alt=""
-        className="w-full h-full object-cover absolute -z-10"
-      />
-      <div className="w-full h-full bg-black/70 absolute -z-10" />
-
-      <div className="w-full h-full p-10 flex-center-all gap-10">
-        <div className="">
-          <h3 className="mb-3 text-base-color bg-white p-2 w-fit">PRODUCTS</h3>
-          <h1 className="text-5xl">Tools That Power Smarter Business</h1>
-        </div>
-
-        <p className="text-sm max-w-2xl text-gray-200">
-          From financial clarity to operational flow, our products are built to
-          make business easier — not harder. Explore PapayMoni and what’s next
-          from Barsmiko.
-        </p>
       </div>
     </div>
   );

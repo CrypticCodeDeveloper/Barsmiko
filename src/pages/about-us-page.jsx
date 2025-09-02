@@ -4,19 +4,43 @@ import {
   ShieldCheck,
   Users,
   Zap,
-  Key,
   Handshake,
-  RecycleIcon,
 } from "lucide-react";
+import SectionFooterCta from "../components/section-footer.cta";
+import SectionHeader from "../components/section-header";
 
 const AboutUsPage = () => {
   return (
-    <div className="pb-10">
-      <Header />
+    <div>
+      <SectionHeader
+        sectionTitle="ABOUT US"
+        sectionSubTitle="Technology That Moves Businesses Forward"
+        text="Barsmiko started with a simple belief: technology should work for real businesses — not the other way around.
+We have seen the hustle: messy spreadsheets, manual tracking, hours wasted on what should be seamless. That’s where we come in.
+We design systems that eliminate chaos, automate the boring stuff, and create clarity for people who just want to run their business better.
+From small teams to scaling startups, we help bold builders simplify, scale, and thrive.
+"
+      />
       <OurMission />
       <BuildTheFuture />
       <OurCoreValues />
       <MeetTheBrands />
+      <SectionFooterCta
+        title="Let’s Build Something That Works"
+        subTitle="We don’t just build digital products,
+ We build the systems that build businesses.
+"
+        btns={[
+          {
+            text: "Start Building With Barsmiko",
+            onClick: () => alert("Start Building With Barsmiko"),
+          },
+          {
+            text: "Talk to Our Team",
+            onClick: () => alert("Talk to our team"),
+          },
+        ]}
+      />
     </div>
   );
 };
