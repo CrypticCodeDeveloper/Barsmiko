@@ -47,7 +47,7 @@ From small teams to scaling startups, we help bold builders simplify, scale, and
 
 const MeetTheBrands = () => {
   return (
-    <div className="section lg:!flex-row lg:gap-10 h-full w-full bg-base-color text-white px-10">
+    <div className="section  lg:gap-10 h-full w-full bg-base-color text-white px-10">
       <div className="max-w-[500px] h-[250px] lg:h-[350px] rounded-md overflow-hidden mt-5 border-2 border-white mx-auto">
         <img
           src="/purpose-passion.jpg"
@@ -56,9 +56,9 @@ const MeetTheBrands = () => {
         />
       </div>
 
-      <div className="mt-8 max-lg:text-center">
-        <h3> Built With Purpose. Backed by Vision.</h3>
-        <p className="max-w-2xl text-gray-200 mt-3">
+      <div className="mt-4 text-center max-w-4xl">
+        <h1> Built With Purpose. Backed by Vision.</h1>
+        <p className=" text-gray-200 text-sm md:text-lg mt-3">
           Barsmiko isn’t just a company — it’s an ecosystem of products and
           partnerships rooted in impact. From PapayMoni, our flagship fintech
           tool, to enterprise systems tailored to scale, we bring ideas to life
@@ -147,19 +147,19 @@ const BuildTheFuture = () => {
 const OurMission = () => {
   return (
     <div className="section !min-h-[20vh] w-full">
-      <div className="flex-center-y max-lg:flex-col justify-evenly px-4">
-        <div className="flex-center-y flex-col gap-5">
-          <p className="text-xl mb-3 text-base-color uppercase font-bold">
+      <div className="flex-center-y max-lg:flex-col gap-12 justify-evenly px-4">
+        <div className="flex-center-y flex-col">
+          <p className="sub-section-heading">
             Our Mission
           </p>
-          <h1 className="text-4xl max-w-xl text-center">
+          <h1 className="sub-section-subheading text-center">
             Our Mission is to{" "}
             <span className="bg-base-color p-1 font-semibold text-white">
               Empower
             </span>{" "}
             Through Innovation
           </h1>
-          <div className="max-w-[400px] h-[250px] rounded-md overflow-hidden mt-5 border-2 border-base-color">
+          <div className="max-w-[500px] lg:w-[500px] min-h-[200px] rounded-md overflow-hidden mt-8 border-2 border-base-color">
             <img
               src="/empower.jpg"
               alt=""
@@ -169,7 +169,7 @@ const OurMission = () => {
         </div>
         <div className="flex-center-y flex-col max-lg:flex-col-reverse">
           <img src="/innovation.svg" className="w-[300px] py-4" alt="" />
-          <p className="max-w-2xl mt-5 text-gray-800">
+          <p className="max-w-xl text-lg mt-5 text-gray-800">
             To help businesses — especially SMEs — work smarter, move faster,
             and grow sustainably through research-backed digital systems,
             seamless automation, and real innovation. We replace friction with

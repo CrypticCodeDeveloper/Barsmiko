@@ -158,13 +158,13 @@ const OurCoreServices = () => {
   return (
     <div className="section">
       <div className="text-center max-w-lg">
-        <p className="text-lg font-semibold uppercase text-base-color mb-4">
+        <p className="sub-section-heading">
           Our Core Services
         </p>
-        <h1>A Wide Range of IT Services we Offer</h1>
+        <h1 className="sub-section-subheading">A Wide Range of IT Services we Offer</h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 mt-14 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14 px-4">
         {services.map((service, i) => (
           <div
             className="max-w-[370px] min-h-[300px] p-10 flex-col pb-8 bg-base-color text-white shadow-xl rounded-2xl"
@@ -174,8 +174,8 @@ const OurCoreServices = () => {
               <service.icon className="text-base-color font-bold size-8" />
             </div>
             <div className="flex flex-col">
-              <p className="font-semibold text-lg">{service.title}</p>
-              <p className="text-xs mt-4">{service.text}</p>
+              <p className="font-semibold text-xl">{service.title}</p>
+              <p className="text-sm mt-4">{service.text}</p>
             </div>
           </div>
         ))}

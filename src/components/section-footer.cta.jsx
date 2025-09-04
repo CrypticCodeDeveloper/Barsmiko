@@ -5,8 +5,9 @@ const SectionFooterCta = ({
     btns = []
 }) => {
   return (
-    <div className="section px-4 text-center">
-      <h2 className="uppercase text-base-color font-semibold text-xl md:text-3xl lg:text-4xl max-w-2xl mb-2">
+    <div className="section">
+      <div className="max-w-3xl flex flex-col items-center px-4 text-center">
+        <h2 className="uppercase text-base-color font-semibold text-xl md:text-3xl lg:text-4xl mb-2">
         {title}
       </h2>
       <p className="text-lg mt-2">{subTitle}</p>
@@ -16,6 +17,7 @@ const SectionFooterCta = ({
           {btn.text}
         </button>)
         }
+      </div>
       </div>
     </div>
   )

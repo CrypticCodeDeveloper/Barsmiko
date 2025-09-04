@@ -163,4 +163,10 @@
   .form-label{
     @apply text-lg;
   }
+  .sub-section-heading{
+    @apply font-semibold text-3xl md:text-4xl lg:text-5xl text-base-color tracking-wider;
+  }
+  .sub-section-subheading{
+    @apply mt-2 text-xl lg:text-2xl ;
+  }
 }

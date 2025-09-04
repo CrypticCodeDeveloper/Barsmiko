@@ -166,7 +166,7 @@ const FeaturedProducts = () => {
 
   return (
     <div className="section">
-      <p className="flex-center-y uppercase font-semibold text-base-color text-xl gap-2">
+      <p className="sub-section-heading">
         Featured Products
       </p>
 

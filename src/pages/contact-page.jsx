@@ -46,10 +46,10 @@ const Form = () => {
     <div className="section flex-row px-10">
 
         <div>
-            <p className="text-lg font-semibold text-base-color">We are Just a Message Away.</p>
+            <p className="sub-section-heading">We are Just a Message Away.</p>
             <ContactUsForm />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
             {
                 contactInfo.map((info, i) => (
                     <div key={`contact-info-${i}`} className="flex gap-4">
