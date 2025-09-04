@@ -1,7 +1,6 @@
 import {
   Rocket,
   ArrowRight,
-  RecycleIcon,
   Building2,
   Microscope,
   Wrench,
@@ -66,7 +65,7 @@ const Partners = () => {
 
   return (
     <div className="section px-4">
-      <h1 className="relative text-2xl">
+      <h1 className="relative text-2xl md:text-4xl">
         Partners & Collaborations
         <div className="border-2 border-base-color w-[60%] mx-auto mt-1" />
       </h1>
@@ -118,8 +117,8 @@ const WhyBarsmiko = () => {
   return (
     <div className="section !flex-row max-[1112px]:!flex-col px-10 bg-base-color">
       <div className="text-center mr-4">
-        <h2 className="text-white">Why Barsmiko?</h2>
-        <p className="text-gray-300 max-w-lg mt-1">
+        <h2 className="text-white text-6xl">Why Barsmiko?</h2>
+        <p className="text-gray-300 text-xl max-w-lg mt-1">
           We don’t just sell tools — we engineer smart systems that grow with
           you. Here’s why businesses trust Barsmiko
         </p>
@@ -229,19 +228,23 @@ const WhatWeDo = () => {
 
   return (
     <div className="section text-black px-10">
-      <div className="w-full flex-center-y flex-col lg:flex-row justify-center gap-10">
+      <div className="w-full flex justify-center items-center gap-10 py-10">
         <div>
-          <h3 className="font-semibold text-xl text-base-color tracking-wider">
+          <h3 className="font-semibold text-5xl text-base-color tracking-wider">
             WHAT WE DO
           </h3>
-          <h1 className="mt-2 text-3xl lg:text-4xl max-w-2xl">
+          <h1 className="mt-2 text-3xl lg:text-xl max-w-sm">
             We help{" "}
             <span className="border-b-2 border-base-color">businesses</span>{" "}
             grow with less friction and more precision
           </h1>
         </div>
 
-        <p className="text-sm text-gray-900 max-w-xl">
+        <div>
+          <ArrowRight className="size-18 text-base-color" />
+        </div>
+
+        <p className="text-lg text-gray-900 max-w-xl">
           At Barsmiko, we help businesses grow with less friction and more
           precision. Whether you are an SME, startup, or scaling enterprise, we
           create digital systems that actually work for you — not against you.

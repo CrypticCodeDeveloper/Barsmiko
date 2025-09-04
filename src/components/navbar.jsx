@@ -13,7 +13,6 @@ import MobileMenu from "./mobile-menu";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "FAQs", href: "/#faq", isHash: true },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Products", href: "/products" },
@@ -55,14 +54,6 @@ const Navbar = () => {
         <ul className="flex max-[898px]:hidden gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
-              {link.isHash ? (
-                <a
-                  href={link.href}
-                  className="text-base hover:text-base-color transition-colors"
-                >
-                  {link.name}
-                </a>
-              ) : (
                 <NavLink
                   to={link.href}
                   className={({ isActive }) =>
@@ -75,7 +66,6 @@ const Navbar = () => {
                 >
                   {link.name}
                 </NavLink>
-              )}
             </li>
           ))}
         </ul>
