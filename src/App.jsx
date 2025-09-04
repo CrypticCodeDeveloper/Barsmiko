@@ -5,6 +5,7 @@ import AboutUsPage from "./pages/about-us-page";
 import ServicesPage from "./pages/services-page";
 import ProductsPage from "./pages/products-page";
 import ContactPage from "./pages/contact-page";
+import BlogsPage from "./pages/blogs-page";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -14,6 +15,7 @@ const router = createBrowserRouter(
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/blog" element={<BlogsPage />} />
     </Route>
   )
 )
