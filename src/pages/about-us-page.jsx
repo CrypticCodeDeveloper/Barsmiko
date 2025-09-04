@@ -15,7 +15,7 @@ const AboutUsPage = () => {
       <SectionHeader
         sectionTitle="ABOUT US"
         sectionSubTitle="Technology That Moves Businesses Forward"
-        text="Barsmiko started with a simple belief: technology should work for real businesses — not the other way around.
+        text=" Barsmiko started with a simple belief: technology should work for real businesses, not the other way around.
 We have seen the hustle: messy spreadsheets, manual tracking, hours wasted on what should be seamless. That’s where we come in.
 We design systems that eliminate chaos, automate the boring stuff, and create clarity for people who just want to run their business better.
 From small teams to scaling startups, we help bold builders simplify, scale, and thrive.
@@ -59,7 +59,7 @@ const MeetTheBrands = () => {
       <div className="mt-4 text-center max-w-4xl">
         <h1> Built With Purpose. Backed by Vision.</h1>
         <p className=" text-gray-200 text-lg md:text-lg mt-6">
-          Barsmiko isn’t just a company — it’s an ecosystem of products and
+          Barsmiko isn’t just a company, it’s an ecosystem of products and
           partnerships rooted in impact. From PapayMoni, our flagship fintech
           tool, to enterprise systems tailored to scale, we bring ideas to life
           through smart, usable tech.
@@ -133,10 +133,10 @@ const OurCoreValues = () => {
 const BuildTheFuture = () => {
   return (
     <div className="section bg-base-color px-4 text-center">
-      <h1 className="text-white">Build the Future of Work — Now</h1>
+      <h1 className="text-white">Build the Future of Work Now</h1>
       <p className="max-w-3xl text-gray-200 mt-5">
         We see a future where powerful technology isn’t reserved for massive
-        corporations. At Barsmiko, we are building that future — where every
+        corporations. At Barsmiko, we are building that future where every
         entrepreneur, team, and organization can access intuitive, intelligent
         tools that help them build, grow, and lead.
       </p>
@@ -149,9 +149,7 @@ const OurMission = () => {
     <div className="section !min-h-[20vh] w-full" id="our-mission">
       <div className="flex-center-y max-lg:flex-col gap-12 justify-evenly px-4">
         <div className="flex-center-y flex-col">
-          <p className="sub-section-heading">
-            Our Mission
-          </p>
+          <p className="sub-section-heading">Our Mission</p>
           <h1 className="sub-section-subheading text-center">
             Our Mission is to{" "}
             <span className="bg-base-color p-1 font-semibold text-white">
@@ -170,10 +168,10 @@ const OurMission = () => {
         <div className="flex-center-y flex-col max-lg:flex-col-reverse">
           <img src="/innovation.svg" className="w-[300px] py-4" alt="" />
           <p className="max-w-xl text-lg mt-5 text-gray-800">
-            To help businesses — especially SMEs — work smarter, move faster,
-            and grow sustainably through research-backed digital systems,
-            seamless automation, and real innovation. We replace friction with
-            flow, so you can focus on the work that truly matters.
+            To help businesses, especially SMEs work smarter, move faster, and
+            grow sustainably through research-backed digital systems, seamless
+            automation, and real innovation. We replace friction with flow, so
+            you can focus on the work that truly matters.
           </p>
         </div>
       </div>

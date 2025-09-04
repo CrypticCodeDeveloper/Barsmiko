@@ -7,9 +7,9 @@ const ContactPage = () => {
     <div>
       <SectionHeader
         sectionTitle="CONTACT US"
-        sectionSubTitle="Let’s Build Something Smart — Together."
+        sectionSubTitle="Let’s Build Something Smart Together."
         text="Got questions? Big ideas? Looking to partner or build something custom?
- Fill out the form — our team would love to hear from you."
+ Fill out the form our team would love to hear from you."
       />
       <Form />
     </div>

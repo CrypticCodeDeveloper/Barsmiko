@@ -17,7 +17,7 @@ const ProductsPage = () => {
       <SectionHeader
         sectionTitle="OUR PRODUCTS"
         sectionSubTitle="Tools That Power Smarter Business"
-        text="From financial clarity to operational flow, our products are built to make business easier — not harder. Explore PapayMoni and what’s next from Barsmiko."
+        text=" From financial clarity to operational flow, our products are built to make business easier, not harder. Explore PapayMoni and what’s next from Barsmiko."
         btns={[
           {
             text: "Join the PapayMoni Waitlist",
@@ -56,10 +56,7 @@ const WhyWeBuildTheWayWeBuild = () => {
       <h1>Why We Build the Way We Do</h1>
  
       <p className="mt-6 md:text-lg text-gray-200 max-w-2xl">
-        Most tools weren’t made for how small businesses actually work. We build
-        software that meets you where you are — intuitive, powerful, and
-        tailored to your hustle. Whether you’re selling from your DMs or scaling
-        a startup, we’re creating tools that fit your reality.
+        Most tools weren’t made for how small businesses actually work. We build software that meets you where you are intuitive, powerful, and tailored to your hustle. Whether you are selling from your DMs or scaling a startup, we are creating tools that fit your reality.
       </p>
     </div>
   );
@@ -79,7 +76,7 @@ const ComingSoonProducts = () => {
     },
     {
       title: "AutoFlow (Coming Soon)",
-      text: "Automate repetitive tasks and routine workflows — from order confirmations to stock updates.",
+      text: "Automate repetitive tasks and routine workflows from order confirmations to stock updates.",
       image: "/workflow.jpg",
     },
   ];
@@ -173,7 +170,7 @@ const FeaturedProducts = () => {
           <p className="mt-4">
             Your hustle deserves better than bank alerts and mental math.
             PapayMoni is the business wallet that thinks like a business owner. PapayMoni simplifies the way you track income, verify payments, and
-            stay on top of cash flow — all in one secure, mobile-first platform.
+            stay on top of cash flow all in one secure, mobile-first platform.
           </p>
 
           <div className="grid max-w-xl grid-cols-1 sm:grid-cols-2 gap-2 mt-6">

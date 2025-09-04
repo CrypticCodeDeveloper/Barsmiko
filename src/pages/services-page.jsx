@@ -19,7 +19,7 @@ const ServicesPage = () => {
       <SectionHeader
         sectionTitle="OUR SERVICES"
         sectionSubTitle="Smarter Services. Seamless Growth."
-        text="At Barsmiko, we deliver the behind-the-scenes tech that moves your business forward — with less friction and more precision. Whether you’re building from scratch or optimizing what already works, our systems are crafted to support scale, sustainability, and speed."
+        text="At Barsmiko, we deliver the behind-the-scenes tech that moves your business forward with less friction and more precision. Whether you’re building from scratch or optimizing what already works, our systems are crafted to support scale, sustainability, and speed."
         btns={[
           {
             text: "Talk to Our Team",
@@ -36,7 +36,7 @@ const ServicesPage = () => {
       <SectionFooterCta
         title="Not Sure Where to Start? Let’s Talk.
 "
-        subTitle="Tell us where you are — and we’ll help you figure out where to go next. Whether it’s one service or a full-stack solution, we’ve got the team, tools, and strategy to bring it to life.
+        subTitle="Tell us where you are and we’ll help you figure out where to go next. Whether it’s one service or a full-stack solution, we have got the team, tools, and strategy to bring it to life.
 
 "
         btns={[
@@ -91,7 +91,7 @@ const WhyChooseBarsmiko = () => {
         ))}
       </div>
       <p className="text-gray-200 mt-8">
-        Whether you are launching something new or fine-tuning the engine — we
+        Whether you are launching something new or fine-tuning the engine, we
         are your team behind the scenes.
       </p>
     </div>
@@ -102,55 +102,32 @@ const OurCoreServices = () => {
   const services = [
     {
       title: "Web Development",
-      tagline: "Custom Sites. Clean Code. Scalable Design.",
-      text: "From fast-loading landing pages to full-stack business platforms, we design and develop websites that do more than look good — they work hard. Mobile-first, SEO-friendly, and built for performance, our web solutions bring your brand and operations to life online.",
-      bestFor:
-        "Startups, SMEs, personal brands, corporate websites, service providers",
-      useCases:
-        "Business websites, eCommerce, custom portals, CMS, landing pages",
+      text: " From fast-loading landing pages to full-stack business platforms, we design and develop websites that do more than look good, they work hard. Mobile-first, SEO-friendly, and built for performance, our web solutions bring your brand and operations to life online.",
       icon: Code,
     },
     {
       title: "DevOps & System Optimization",
-      tagline: "Ship Faster. Stay Reliable. Scale Confidently.",
       text: "Our DevOps services bridge the gap between development and operations, making your systems more agile, stable, and efficient. We automate deployments, monitor performance, and ensure seamless collaboration between your infrastructure and your code.",
-      bestFor:
-        "Tech startups, SaaS companies, large teams managing live platforms",
-      useCases:
-        "CI/CD pipelines, cloud deployment, system monitoring, infrastructure-as-code",
       icon: CloudCog,
     },
     {
       title: "IT Services & Support",
-      tagline: "Tech That Works — So You Can Focus on Growth.",
-      text: "We provide end-to-end IT services that keep your digital backbone running smoothly. Whether it’s network management, system integration, or helpdesk support, we deliver reliable IT that just works — no downtime, no drama.",
-      bestFor: "SMEs, enterprises, remote teams, public sector organizations",
-      useCases:
-        "Tech support, network setup, software integration, endpoint management",
+      text: " We provide end-to-end IT services that keep your digital backbone running smoothly. Whether it’s network management, system integration, or helpdesk support, we deliver reliable IT that just works, no downtime, no drama.",
       icon: Server,
     },
     {
       title: "Intelligent Automation",
-      tagline: "Manual Work is Holding You Back. We Fix That.",
-      text: "Tired of repetitive tasks? We build smart systems that streamline everything from customer onboarding to inventory and invoice processing — freeing up your team to focus on what really matters.",
-      bestFor: "Growing businesses, operations teams, digital product owners",
-      useCases: "Workflow automation, approvals, CRM syncs, backend tools",
+      text: "Tired of repetitive tasks? We build smart systems that streamline everything from customer onboarding to inventory and invoice processing, freeing up your team to focus on what really matters",
       icon: Workflow,
     },
     {
       title: "Fintech Solutions (Featuring PapayMoni)",
-      tagline: "Money Tools That Work the Way You Do.",
-      text: "From peer-to-peer payments to expense tracking, we develop fintech products that simplify financial management for business owners and underserved communities. PapayMoni is our flagship solution — intuitive, reliable, and ready for scale.",
-      bestFor: "SMEs, fintech startups, informal traders, NGOs",
-      useCases: "Digital wallets, transaction tracking, payment systems",
+      text: "From peer-to-peer payments to expense tracking, we develop fintech products that simplify financial management for business owners and underserved communities. PapayMoni is our flagship solution, intuitive, reliable, and ready for scale.",
       icon: CreditCard,
     },
     {
       title: "Research & Digital Innovation",
-      tagline: "Ideas Need Execution. We Bring the Blueprint.",
-      text: "We turn concepts into concrete strategies through deep research, validation, and early prototyping. Whether you're exploring a new digital product or modernizing an old process, we bring insight to your next big move.",
-      bestFor: "Founders, impact-driven orgs, product teams",
-      useCases: "Product validation, user research, MVP strategy",
+      text: "We turn concepts into concrete strategies through deep research, validation, and early prototyping. Whether you are exploring a new digital product or modernizing an old process, we bring insight to your next big move.",
       icon: FlaskRound,
     },
   ];
@@ -158,10 +135,10 @@ const OurCoreServices = () => {
   return (
     <div className="section">
       <div className="text-center max-w-lg">
-        <p className="sub-section-heading">
-          Our Core Services
-        </p>
-        <h1 className="sub-section-subheading">A Wide Range of IT Services we Offer</h1>
+        <p className="sub-section-heading">Our Core Services</p>
+        <h1 className="sub-section-subheading">
+          A Wide Range of IT Services we Offer
+        </h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14 px-4">

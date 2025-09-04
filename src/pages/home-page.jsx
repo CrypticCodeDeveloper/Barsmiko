@@ -105,7 +105,7 @@ const WhyBarsmiko = () => {
       icon: Microscope,
     },
     {
-      text: "Custom-fit to your needs — no fluff, no overwhelm",
+      text: "Custom-fit to your needs, no fluff, no overwhelm",
       icon: Wrench,
     },
     {
@@ -115,11 +115,14 @@ const WhyBarsmiko = () => {
   ];
 
   return (
-    <div className="section !flex-row max-[1112px]:!flex-col px-10 bg-base-color" id="why-barsmiko">
+    <div
+      className="section !flex-row max-[1112px]:!flex-col px-10 bg-base-color"
+      id="why-barsmiko"
+    >
       <div className="text-center mr-4">
         <h2 className="text-white text-4xl lg:text-6xl">Why Barsmiko?</h2>
         <p className="text-gray-300 text-xl max-w-lg mt-2 md:mt-4">
-          We don’t just sell tools — we engineer smart systems that grow with
+          We don’t just sell tools, we engineer smart systems that grow with
           you. Here’s why businesses trust Barsmiko
         </p>
       </div>
@@ -155,7 +158,7 @@ const WhoWeHelp = () => {
     },
     {
       title: "Fintechs & Financial Service Providers",
-      desc: "We support digital wallets, peer-to-peer transfers, payment platforms, and more — especially for underserved markets.",
+      desc: "We support digital wallets, peer-to-peer transfers, payment platforms, and more especially for underserved markets.",
       image_path: "/who-we-help/fintech.jpg",
     },
     {
@@ -211,7 +214,7 @@ const WhatWeDo = () => {
     },
     {
       title: "Seamless Fintech (featuring PapayMoni)",
-      text: "Modern financial tools designed for real-world transactions — fast, reliable, and user-first.",
+      text: "Modern financial tools designed for real-world transactions, fast, reliable, and user-first.",
       icon: CreditCard,
     },
     {
@@ -221,7 +224,7 @@ const WhatWeDo = () => {
     },
     {
       title: "Enterprise Services",
-      text: "Custom software, internal tools, dashboards, and more — built to modernize and transform how large organizations operate.",
+      text: "Custom software, internal tools, dashboards, and more built to modernize and transform how large organizations operate.",
       icon: Building2,
     },
   ];
@@ -230,9 +233,7 @@ const WhatWeDo = () => {
     <div className="section text-black px-10" id="what-we-do">
       <div className="w-full flex max-md:flex-col justify-center items-center gap-10 py-10">
         <div className="md:min-w-[350px]">
-          <h3 className="sub-section-heading">
-            WHAT WE DO
-          </h3>
+          <h3 className="sub-section-heading">WHAT WE DO</h3>
           <h1 className="sub-section-subheading md:max-w-sm">
             We help{" "}
             <span className="border-b-2 border-base-color">businesses</span>{" "}
@@ -240,14 +241,12 @@ const WhatWeDo = () => {
           </h1>
         </div>
 
-      
-          <ArrowRight className="size-18 text-base-color max-md:hidden" />
-      
+        <ArrowRight className="size-18 text-base-color max-md:hidden" />
 
         <p className="text-lg md:text-sm lg:text-lg text-gray-900 max-w-xl">
           At Barsmiko, we help businesses grow with less friction and more
           precision. Whether you are an SME, startup, or scaling enterprise, we
-          create digital systems that actually work for you — not against you.
+          create digital systems that actually work for you, not against you.
           From research-driven innovation to smart automation and intuitive
           fintech platforms, we eliminate busywork, boost your bottom line, and
           simplify the way you run your business.
@@ -286,7 +285,7 @@ const Hero = () => {
           Smart Tech for Bold Builders.
         </h1>
         <h3 className="text-sm md:text-lg max-w-xl text-center text-gray-800">
-          Build, scale, and automate — without the chaos. From fintech to ops,
+          Build, scale, and automate without the chaos. From fintech to ops,
           Barsmiko gives you the systems to grow smarter.
         </h3>
 

@@ -10,25 +10,25 @@ export function FaqsAccordion() {
     {
       question: "What kind of businesses do you work with?",
       answer:
-        "From solo entrepreneurs to government-backed programs, our tech adapts to your needs — no matter your size.",
+        "From solo entrepreneurs to government-backed programs, our tech adapts to your needs no matter your size.",
       value: "question-1",
     },
     {
       question: "Can you build a product from scratch?",
       answer:
-        "Yes — whether you have an idea, prototype, or chaotic process that needs structure, we help bring it to life (and scale).",
+        "Yes, whether you have an idea, prototype, or chaotic process that needs structure, we help bring it to life (and scale).",
       value: "question-2",
     },
     {
       question: "Do I need to be “techy” to work with you?",
       answer:
-        "Nope. We make systems that are simple to use and powerful under the hood — built with everyday business owners in mind.",
+        "Nope. We make systems that are simple to use and powerful under the hood, built with everyday business owners in mind.",
       value: "question-3",
     },
     {
       question: "What makes Barsmiko different?",
       answer:
-        "We don’t just build products. We build the systems that let you build your future — easier, faster, and smarter.",
+        "We don’t just build products. We build the systems that let you build your future easier, faster, and smarter.",
       value: "question-4",
     },
   ];
