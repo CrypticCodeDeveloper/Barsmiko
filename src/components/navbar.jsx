@@ -2,23 +2,11 @@ import { NavLink } from "react-router";
 import {
   Mail,
   Phone,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Menu,
   LifeBuoy,
 } from "lucide-react";
 import MobileMenu from "./mobile-menu";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Products", href: "/products" },
-  { name: "Contact", href: "/contact" },
-  { name: "Blog", href: "/blog" },
-];
+import { navLinks, socials } from "../constants";
 
 const Navbar = () => {
   return (
@@ -42,10 +30,11 @@ const Navbar = () => {
           </p>
         </div>
         <div className="flex-center-y gap-3 md:gap-5">
-          <Facebook className="size-5" />
-          <Instagram className="size-5" />
-          <Linkedin className="size-5" />
-          <Twitter className="size-5" />
+         {
+          socials.map((social, i) => (
+             <a key={`social-link-${i}`} href={social.href} ><social.icon className="size-5" /></a>
+          ))
+         }
         </div>
       </div>
 
@@ -70,8 +59,8 @@ const Navbar = () => {
           ))}
         </ul>
         <div>
-          <button className="btn max-[898px]:hidden">Contact Us</button>
-          <MobileMenu navLinks={navLinks} />
+          <button className="btn max-[898px]:hidden">Talk to our team</button>
+          <MobileMenu/>
         </div>
         
       </div>

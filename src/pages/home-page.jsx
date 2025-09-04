@@ -42,7 +42,7 @@ const HomePage = () => {
 
 const FAQs = () => {
   return (
-    <div className="section bg-base-color" id="faq">
+    <div className="section bg-base-color" id="faqs">
       <h1 className="relative text-white mb-8">
         FAQs
         <div className="border-2 border-white w-[60%] mx-auto mt-1" />
@@ -64,7 +64,7 @@ const Partners = () => {
   ];
 
   return (
-    <div className="section px-4">
+    <div className="section px-4" id="partners">
       <h1 className="relative text-2xl md:text-4xl">
         Partners & Collaborations
         <div className="border-2 border-base-color w-[60%] mx-auto mt-1" />
@@ -115,10 +115,10 @@ const WhyBarsmiko = () => {
   ];
 
   return (
-    <div className="section !flex-row max-[1112px]:!flex-col px-10 bg-base-color">
+    <div className="section !flex-row max-[1112px]:!flex-col px-10 bg-base-color" id="why-barsmiko">
       <div className="text-center mr-4">
         <h2 className="text-white text-4xl lg:text-6xl">Why Barsmiko?</h2>
-        <p className="text-gray-300 text-xl max-w-lg mt-2 md:mt-1">
+        <p className="text-gray-300 text-xl max-w-lg mt-2 md:mt-4">
           We don’t just sell tools — we engineer smart systems that grow with
           you. Here’s why businesses trust Barsmiko
         </p>
@@ -171,7 +171,7 @@ const WhoWeHelp = () => {
   ];
 
   return (
-    <div className="section  text-black px-10">
+    <div className="section  text-black px-10" id="who-we-serve">
       <h1 className="relative">
         Who We Help
         <div className="border-2 border-base-color w-[60%] mx-auto mt-1" />
@@ -227,7 +227,7 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <div className="section text-black px-10">
+    <div className="section text-black px-10" id="what-we-do">
       <div className="w-full flex max-md:flex-col justify-center items-center gap-10 py-10">
         <div className="md:min-w-[350px]">
           <h3 className="sub-section-heading">

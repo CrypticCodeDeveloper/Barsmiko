@@ -3,9 +3,9 @@ import { XIcon, Menu } from "lucide-react";
 import { useState } from "react";
 import { NavLink } from "react-router";
 
-const MobileMenu = ({
-    navLinks,
-}) => {
+import { navLinks } from "../constants";
+
+const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

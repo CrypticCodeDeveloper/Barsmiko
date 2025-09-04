@@ -6,7 +6,7 @@ import {
   Bell,
   LineChart,
   ArrowRight,
-  BellDotIcon
+  BellDotIcon,
 } from "lucide-react";
 import SectionHeader from "../components/section-header";
 import SectionFooterCta from "../components/section-footer.cta";
@@ -33,11 +33,8 @@ const ProductsPage = () => {
       <ComingSoonProducts />
       <WhyWeBuildTheWayWeBuild />
       <SectionFooterCta
-        title="Be the First to Try What We’re Building.
-"
-        subTitle="Get early access, updates, and insider perks on PapayMoni and our future product drops.
-
-"
+        title="Be the First to Try What We’re Building."
+        subTitle="Get early access, updates, and insider perks on PapayMoni and our future product drops."
         btns={[
           {
             text: "Join the Waitlist",
@@ -54,37 +51,38 @@ const ProductsPage = () => {
 };
 
 const WhyWeBuildTheWayWeBuild = () => {
-    return (
-        <div className="section px-4 max-lg:text-center bg-base-color text-white">
-            <h1>Why We Build the Way We Do</h1>
-            <p className="uppercase text-sm lg:text-lg font-semibold mt-2">Products Built for Real Business, Not Just Big Business.</p>
-            <p className="mt-6 text-gray-200 max-w-2xl">
-                Most tools weren’t made for how small businesses actually work.
- We build software that meets you where you are — intuitive, powerful, and tailored to your hustle. Whether you’re selling from your DMs or scaling a startup, we’re creating tools that fit your reality.
-            </p>
-        </div>
-    )
-}
+  return (
+    <div className="section px-4 max-lg:text-center bg-base-color text-white">
+      <h1>Why We Build the Way We Do</h1>
+ 
+      <p className="mt-6 md:text-lg text-gray-200 max-w-2xl">
+        Most tools weren’t made for how small businesses actually work. We build
+        software that meets you where you are — intuitive, powerful, and
+        tailored to your hustle. Whether you’re selling from your DMs or scaling
+        a startup, we’re creating tools that fit your reality.
+      </p>
+    </div>
+  );
+};
 
 const ComingSoonProducts = () => {
-
-    const ComingSoonProducts = [
-        {
-            title: "OpsDash (Coming Soon)",
-            text: "Simplify operations with task tracking, customer records, and fulfillment tools in one place.",
-            image: "/records.jpg"
-        },
-        {
-            title: "ClarityBoard (Coming Soon)",
-            text: "Visualize your business like never before. Smart dashboards for real-time insights.",
-            image: "/dashboard.jpg"
-        },
-        {
-            title: "AutoFlow (Coming Soon)",
-            text: "Automate repetitive tasks and routine workflows — from order confirmations to stock updates.",
-            image: "/workflow.jpg"
-        },
-    ]
+  const ComingSoonProducts = [
+    {
+      title: "OpsDash (Coming Soon)",
+      text: "Simplify operations with task tracking, customer records, and fulfillment tools in one place.",
+      image: "/records.jpg",
+    },
+    {
+      title: "ClarityBoard (Coming Soon)",
+      text: "Visualize your business like never before. Smart dashboards for real-time insights.",
+      image: "/dashboard.jpg",
+    },
+    {
+      title: "AutoFlow (Coming Soon)",
+      text: "Automate repetitive tasks and routine workflows — from order confirmations to stock updates.",
+      image: "/workflow.jpg",
+    },
+  ];
 
   return (
     <div className="section px-4">
@@ -103,25 +101,25 @@ const ComingSoonProducts = () => {
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {ComingSoonProducts.map((product, i) => (
-          <div key={`coming-soon-product-${i}`} className="w-[300px] min-h-[300px] rounded-lg overflow-hidden">
+          <div
+            key={`coming-soon-product-${i}`}
+            className="w-[300px] min-h-[300px] rounded-lg overflow-hidden"
+          >
             <div className="w-full h-[150px] flex-center-all overflow-hidden relative">
               <img
                 src={product.image}
                 alt=""
                 className="image-fill absolute -z-10"
               />
-                 <div className="w-full h-full bg-base-color/20 absolute -z-10" />
-                 <button className="btn !bg-green-800 flex-center-y gap-2" >
-                    <BellDotIcon />
-                    Get Product Update</button>
+              <div className="w-full h-full bg-base-color/20 absolute -z-10" />
+              <button className="btn !bg-base-color flex-center-y gap-2">
+                <BellDotIcon />
+                Get Product Update
+              </button>
             </div>
             <div className="text-white p-4 bg-base-color h-full">
-              <h3 className="text-lg font-semibold">
-                {product.title}
-              </h3>
-              <p className="mt-2">
-                {product.text}
-              </p>
+              <h3 className="text-lg font-semibold">{product.title}</h3>
+              <p className="mt-2">{product.text}</p>
             </div>
           </div>
         ))}
@@ -166,43 +164,38 @@ const FeaturedProducts = () => {
 
   return (
     <div className="section">
-      <p className="sub-section-heading">
-        Featured Products
-      </p>
+      <p className="sub-section-heading">Featured Products</p>
 
-      <div className="flex-center-y flex-col-reverse lg:flex-row lg:justify-between gap-8 w-full px-4 lg:px-10 mt-10">
+      <div className="flex-center-y flex-col-reverse lg:flex-row lg:justify-center gap-8 w-full px-4 lg:px-10 mt-10">
         <div className="max-w-2xl">
-          <h2 className="text-3xl">PapayMoni: Money, Made Manageable</h2>
-          <p className="mt-2 font-semibold text-sm lg:text-lg text-base-color">
-            Your hustle deserves better than bank alerts and mental math.
-            PapayMoni is the business wallet that thinks like a business owner.
-          </p>
+          <h2 className="text-4xl">PapayMoni: Money, Made Manageable</h2>
 
           <p className="mt-4">
-            PapayMoni simplifies the way you track income, verify payments, and
+            Your hustle deserves better than bank alerts and mental math.
+            PapayMoni is the business wallet that thinks like a business owner. PapayMoni simplifies the way you track income, verify payments, and
             stay on top of cash flow — all in one secure, mobile-first platform.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+          <div className="grid max-w-xl grid-cols-1 sm:grid-cols-2 gap-2 mt-6">
             {fintechFeatures.map((feature, index) => (
               <div key={index} className="flex-center-y gap-4 mt-4">
                 <div className={`p-3 rounded-lg ${feature.bg}`}>
                   <feature.icon size={20} />
                 </div>
-                <p className="font-semibold">{feature.text}</p>
+                <p className="max-w-[200px]">{feature.text}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="w-full mb-8 max-w-[600px] h-[400px] mt-5 overflow-hidden rounded-lg flex-center-all relative">
+        <div className="w-full border-4 border-base-color mb-8 md:min-w-[400px]  max-w-[600px] h-[400px] mt-5 overflow-hidden rounded-lg flex-center-all relative">
           <img
             src="/PaPaymoni.jpg"
             className="image-fill absolute -z-10"
             alt=""
           />
           <div className="w-full h-full bg-base-color/20 absolute -z-10" />
-          <button className="btn font-bold !bg-green-700 flex-center-y gap-1">
+          <button className="btn font-bold !bg-base-color flex-center-y gap-1">
             Join the Waitlist
             <ArrowRight className="size-6" />
           </button>

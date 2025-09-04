@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -5,6 +6,8 @@
 
 @theme {
   --color-base-color: #324CAD;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
 }
 
 @theme inline {
@@ -119,19 +122,19 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-roboto;
   }
   h1{
-    @apply text-3xl lg:text-5xl font-semibold;
+    @apply text-3xl lg:text-5xl font-semibold font-poppins;
   }
   h2{
-    @apply text-4xl font-semibold;
+    @apply text-4xl font-semibold font-poppins;
   }
   h3{
-    @apply text-3xl font-semibold;
+    @apply text-3xl font-semibold font-poppins;
   }
   h4{
-    @apply text-2xl font-semibold;
+    @apply text-2xl font-semibold font-poppins;
   }
 }
 

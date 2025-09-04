@@ -76,7 +76,7 @@ const WhyChooseBarsmiko = () => {
 
   return (
     <div className="section px-4 border-b-2 bg-base-color text-white border-base-color">
-      <h1>Why Choose Barsmiko?</h1>
+      <h1 className="text-center">Why Choose Barsmiko?</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {benefits.map((benefit, i) => (
           <div

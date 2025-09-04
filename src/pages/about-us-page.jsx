@@ -58,7 +58,7 @@ const MeetTheBrands = () => {
 
       <div className="mt-4 text-center max-w-4xl">
         <h1> Built With Purpose. Backed by Vision.</h1>
-        <p className=" text-gray-200 text-sm md:text-lg mt-3">
+        <p className=" text-gray-200 text-lg md:text-lg mt-6">
           Barsmiko isn’t just a company — it’s an ecosystem of products and
           partnerships rooted in impact. From PapayMoni, our flagship fintech
           tool, to enterprise systems tailored to scale, we bring ideas to life
@@ -104,7 +104,7 @@ const OurCoreValues = () => {
   ];
 
   return (
-    <div className="section">
+    <div className="section" id="our-core-values">
       <h1 className="relative">
         Our Core Values
         <div className="border-2 border-base-color w-[60%] mx-auto mt-1" />
@@ -146,7 +146,7 @@ const BuildTheFuture = () => {
 
 const OurMission = () => {
   return (
-    <div className="section !min-h-[20vh] w-full">
+    <div className="section !min-h-[20vh] w-full" id="our-mission">
       <div className="flex-center-y max-lg:flex-col gap-12 justify-evenly px-4">
         <div className="flex-center-y flex-col">
           <p className="sub-section-heading">
