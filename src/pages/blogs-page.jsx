@@ -8,16 +8,6 @@ const BlogsPage = () => {
         sectionTitle="LATEST NEWS AND ARTICLES"
         sectionSubTitle="Insights at the Speed of Tech"
         text="From industry deep dives to practical how-tos, our blog is where ideas meet action. Whether you’re a founder, developer, or decision-maker, you’ll find content designed to help you build stronger systems and grow without chaos."
-        // btns={[
-        //   {
-        //     text: "Subscribe to our newsletter",
-        //     onClick: () => alert("Talk to our team"),
-        //   },
-        //   {
-        //     text: "Contact us",
-        //     onClick: () => alert("Explore Solutions"),
-        //   },
-        // ]}
       />
       <AllBlogs />
     </div>
@@ -33,7 +23,7 @@ const AllBlogs = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {new Array(8).fill().map((_, i) => (
           <a
-            href="/"
+            href="/blog/new-blog-post"
             key={`Blog-post-card-${i}`}
             className="max-w-[350px] text-white min-h-[500px] bg-base-color"
           >

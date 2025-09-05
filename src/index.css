@@ -128,13 +128,37 @@
     @apply text-3xl lg:text-5xl font-semibold font-poppins;
   }
   h2{
-    @apply text-4xl font-semibold font-poppins;
+    @apply text-2xl font-semibold font-poppins;
   }
   h3{
-    @apply text-3xl font-semibold font-poppins;
+    @apply text-xl font-semibold font-poppins;
   }
   h4{
-    @apply text-2xl font-semibold font-poppins;
+    @apply text-lg font-semibold font-poppins;
+  }
+  h5, h6{
+    @apply font-poppins text-sm font-semibold;
+  }
+  strong, b {
+    @apply text-base-color;
+  }
+  table{
+    @apply border-base-color border-2 p-2 py-4;
+  }
+  thead{
+    @apply border-b-2 border-base-color;
+  }
+  td, th {
+    @apply px-6 py-4;
+  }
+  th {
+    @apply text-base-color;
+  }
+  tbody{
+    @apply divide-base-color divide-y-2;
+  }
+  hr{
+    @apply border-t-2 border-dashed border-base-color my-5;
   }
 }
 
