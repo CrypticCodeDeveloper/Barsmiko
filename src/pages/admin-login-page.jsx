@@ -1,7 +1,10 @@
+import { LoginForm } from "../components/login-form"
 
 const AdminLoginPage = () => {
   return (
-    <div>AdminLoginPage</div>
+    <div className="w-full min-h-screen flex-center-all bg-base-color">
+        <LoginForm />
+    </div>
   )
 }
 

@@ -50,7 +50,23 @@ const MobileMenu = () => {
         <ul className="flex flex-col gap-6">
                   {navLinks.map((link) => (
                     <li onClick={() => setIsOpen(false)} className="text-lg" key={link.name}>
-                        <NavLink
+                        {
+                          link.target ? (
+                            <a
+                          href={link.href}
+                          target={link.target}
+                          className={({ isActive }) =>
+                            `${
+                              isActive
+                                ? "text-base-color font-semibold text-xl border-b-2 border-base-color pb-1"
+                                : "text-base"
+                            } hover:text-base-color transition-all text-lg`
+                          }
+                        >
+                          {link.name}
+                        </a>
+                          ) : (
+                            <NavLink
                           to={link.href}
                           className={({ isActive }) =>
                             `${
@@ -62,6 +78,8 @@ const MobileMenu = () => {
                         >
                           {link.name}
                         </NavLink>
+                          )
+                        }
                     </li>
                   ))}
                 </ul>

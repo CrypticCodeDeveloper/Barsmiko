@@ -13,7 +13,7 @@ export const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Products", href: "/products" },
   { name: "Contact", href: "/contact" },
-  { name: "Blog", href: "/blog" },
+  { name: "Blog", href: "/blog", target: "_blank" },
 ];
 
 export const socials = [

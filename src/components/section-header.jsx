@@ -28,7 +28,7 @@ const SectionHeader = ({
         </p>
         <div className="mt-6 flex-center-y gap-4">
             {
-                btns.map((btn, i) => <button key={`section-header-cta-${i}`} onClick={btn.onClick} className="btn">{btn.text}</button>)
+                btns.map((btn, i) => <button key={`section-header-cta-${i}`} onClick={btn.onClick} className={`btn ${btn?.className} flex-center-y gap-1`}>{btn?.icon} {btn.text}</button>)
             }
         </div>
         </div>

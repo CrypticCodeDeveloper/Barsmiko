@@ -43,7 +43,23 @@ const Navbar = () => {
         <ul className="flex max-[898px]:hidden gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
-                <NavLink
+                {
+                  link.target ? (
+                    <a
+                  href={link.href}
+                  target={link?.target}
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? "text-base-color font-semibold text-lg"
+                        : "text-base"
+                    } hover:text-base-color transition-all`
+                  }
+                >
+                  {link.name}
+                </a>
+                  ) : (
+                    <NavLink
                   to={link.href}
                   className={({ isActive }) =>
                     `${
@@ -55,6 +71,8 @@ const Navbar = () => {
                 >
                   {link.name}
                 </NavLink>
+                  )
+                }
             </li>
           ))}
         </ul>
