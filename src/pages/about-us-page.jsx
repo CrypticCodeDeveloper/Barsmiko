@@ -149,7 +149,7 @@ const OurMission = () => {
     <div className="section !min-h-[20vh] w-full" id="our-mission">
       <div className="flex-center-y max-lg:flex-col gap-12 justify-evenly px-4">
         <div className="flex-center-y flex-col">
-          <p className="sub-section-heading">Our Mission</p>
+          <p className="sub-section-heading uppercase">Our Mission</p>
           <h1 className="sub-section-subheading text-center">
             Our Mission is to{" "}
             <span className="bg-base-color p-1 font-semibold text-white">

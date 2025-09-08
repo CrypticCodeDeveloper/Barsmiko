@@ -236,7 +236,7 @@ const WhatWeDo = () => {
           <h3 className="sub-section-heading">WHAT WE DO</h3>
           <h1 className="sub-section-subheading md:max-w-sm">
             We help{" "}
-            <span className="border-b-2 border-base-color">businesses</span>{" "}
+          businesses
             grow with less friction and more precision
           </h1>
         </div>
