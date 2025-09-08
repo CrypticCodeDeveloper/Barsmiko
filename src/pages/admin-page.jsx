@@ -1,22 +1,14 @@
-import { useState } from "react";
 import SectionHeader from "../components/section-header";
 import { LogOut } from "lucide-react";
 
-// import { useEditor, EditorContent } from '@tiptap/react'
-// import { FloatingMenu, BubbleMenu } from '@tiptap/react/menus'
-// import StarterKit from '@tiptap/starter-kit'
-
-import ReactQuill from 'react-quill-new';
-import 'react-quill-new/dist/quill.snow.css';
-
 import { useAuthContext } from "../contexts/auth-context";
-import FileUpload from "../components/file-upload";
-import CreateBlogForm from "../components/create-blog-form";
 
-// import { Editor, EditorState } from "draft-js";
+import CreateBlogForm from "../components/create-blog-form";
+import { useNavigate } from "react-router";
 
 const AdminPage = () => {
-  const [value, setValue] = useState(null);
+ const navigate = useNavigate()
+ const { logout } = useAuthContext()
 
 
   return (
@@ -29,21 +21,16 @@ const AdminPage = () => {
   btns={[
     {
       text: "Back to Homepage",
-      onClick: () => alert("Back to home page"),
+      onClick: () => navigate("/"),
     },
     {
       text: "Logout",
       icon: <LogOut />,
-      onClick: () => alert("Logout"),
+      onClick: () => logout(),
       className: "!bg-red-500",
     },
   ]}
 />
-
-      {/* <div className="m-10 max-w-[500px] flex flex-col gap-6">
-        <ReactQuill theme="snow" value={value} onChange={setValue} />
-      <FileUpload />
-      </div> */}
 
      <div className="p-10">
        <CreateBlogForm />

@@ -1,36 +1,73 @@
-
+import { useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Input } from "../components/ui/input";
 
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
 
-import { createBlogPost } from "../utils/requests";
+import { createBlogPost, editBlogPost } from "../utils/requests";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import { id } from "zod/v4/locales";
 
-const CreateBlogForm = () => {
+const CreateBlogForm = ({
+    mode = "create", 
+    blog,
+}) => {
 
-  const { register , handleSubmit, control } = useForm();
+  const { register , handleSubmit, control, reset } = useForm();
+    console.log(blog)
+
+  useEffect(() => {
+    const fillFields = () => {
+        reset({
+            title: blog?.title,
+            content: blog?.content,
+            category: blog?.category,
+        })
+    }
+
+    if (mode === "edit") {
+        fillFields()
+    }
+  
+  }, [blog?.title, blog?.content, blog?.category, mode, reset])
+  
+
+  const {mutateAsync: createBlog, isPending: createBlogPending} = useMutation({
+    mutationFn: createBlogPost,
+    onError: () => {
+        toast.error("Unexpected Error occured. Confirm if blog was posted and retry.")
+    },
+    onSuccess: () => {
+        toast.success("New blog post created")
+    },
+    onSettled: () => reset()
+  })
+
 
   const onSubmit = async (data) => {
-    const blog = {
-        ...data,
-        cover_image: data.cover_image[0],
-    }
 
-    try {
-        const blogResponse = await createBlogPost(blog);
-        toast.success(blogResponse?.message)
-        console.log(blogResponse);
-    } catch (error) {
-        toast.error("Failed to create blog post")
-    }
-
+      const blogFormData = {
+          ...data,
+          cover_image: data.cover_image[0],
+        }
+        
+        if (mode === "edit" ) {
+            try {
+                await editBlogPost(blog?._id, blogFormData);
+                toast.success("Blog post edited")
+            } catch (error) {
+                toast.error("Failed to edit blog post")
+            }
+        } else {
+            createBlog(blogFormData)
+        }
   };
 
   return (
     <div>
-      <h3 className="text-base-color mb-4">Create a new blog post</h3>
+      <h3 className="text-base-color mb-4">{mode === "edit" ? "Edit" : "Create"} a new blog post</h3>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -71,8 +108,8 @@ const CreateBlogForm = () => {
           <input type="file" className="border-2 border-base-color p-2" {...register("cover_image")} />
         </div>
 
-        <button className="btn" type="submit">
-          Create Blog Post
+        <button disabled={createBlogPending} className="btn disabled:bg-gray-600 disabled:hover:bg-gray-700 disabled:cursor-not-allowed" type="submit">
+          {createBlogPending ? "Loading ..." : mode === "edit" ? "Edit blog post" : "Create a blog post"}
         </button>
       </form>
     </div>

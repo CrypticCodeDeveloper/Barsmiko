@@ -30,9 +30,10 @@ const AllBlogs = () => {
     <div className="section px-4 !py-20">
       {
         isLoading ? (
-          <div>Blog posts loading ... </div>
+          <h2 className="text-base-color">Blog posts loading ... </h2>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          blogs.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogs.map((blog, i) => (
           <BlogCard title={blog.title}
           id={blog._id}
@@ -45,6 +46,9 @@ const AllBlogs = () => {
               />
         ))}
       </div>
+          ) : (
+            <h2 className="text-base-color">There is no blog post yet</h2>
+          )
         )
       }
     </div>
@@ -66,7 +70,7 @@ const BlogCard = ({
             className="max-w-[350px] text-white min-h-[500px] bg-base-color"
           >
             <div className="w-full max-h-[200px] overflow-hidden relative">
-              <img src={`http://localhost:5500/static/${cover_image}`} className="w-full h-full object-cover" />
+              <img src={cover_image} className="w-full h-full object-cover" />
                <h3 className="absolute text-xl p-1 px-4 font-semibold top-0 right-0 bg-base-color text-white uppercase">
                 {category}
               </h3>

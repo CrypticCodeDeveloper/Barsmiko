@@ -3,12 +3,18 @@ import Markdown from "react-markdown"
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 
-import { useQuery } from "@tanstack/react-query"
-import { useParams } from "react-router"
-import { getBlogPost } from "../utils/requests"
+import { useQuery, useQueryClient } from "@tanstack/react-query"
+import { useParams, useNavigate } from "react-router"
+import { getBlogPost, deleteBlogPost } from "../utils/requests"
 
+import { useAuthContext } from "../contexts/auth-context"
+import toast from "react-hot-toast"
+import EditBlogModal from "../components/edit-blog-modal"
 
 const BlogPostPage = () => {
+  const { user } = useAuthContext()
+  const navigate = useNavigate()
+  const queryClient = useQueryClient()
 
   const {id} = useParams()
 
@@ -17,8 +23,17 @@ const BlogPostPage = () => {
     queryFn: () => getBlogPost(id),
     select: (data) => data.blog
   })
-
-  console.log(blog)
+  
+  const handleDeleteBlogPost = async (id) => {
+    try {
+      await deleteBlogPost(id)
+      queryClient.invalidateQueries(["blogs"])
+      queryClient.invalidateQueries(["blog"])
+      navigate("/blog")
+    } catch (error) {
+      console.error("Failed to delete blog post")
+    } 
+  }
 
   return (
     <div className='min-h-[60vh] p-6 md:p-8 lg:p-10 w-full flex justify-center'>
@@ -41,7 +56,15 @@ const BlogPostPage = () => {
                     {blog.category}
                 </h2>
             </div>
-            <img src={`http://localhost:5500/static/${blog.cover_image}`} alt="" className="max-h-[60vh] mt-8" />
+            {
+              user && (
+                <div className="mt-4 flex-center-y gap-4">
+                <button onClick={() => handleDeleteBlogPost(blog._id)} className="btn !bg-red-800">Delete Post</button>
+                <EditBlogModal blog={blog} />
+              </div>
+              )
+            }
+            <img src={blog.cover_image} alt="" className="max-h-[60vh] mt-8" />
 
             <p className="mt-10 flex flex-col max-w-3xl">
                <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>{blog.content}</Markdown>

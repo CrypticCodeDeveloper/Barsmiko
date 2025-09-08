@@ -280,7 +280,7 @@ const Hero = () => {
       />
       <div className="w-full h-full bg-gradient-to-r from-white/80 via-white/50 to-transparent absolute -z-10" />
       <div className="h-full w-full flex-center-all flex-col px-4">
-        <h1 className="text-base-color text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 flex-center-y flex-col text-center gap-3">
+        <h1 className="text-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 flex-center-y flex-col text-center gap-3">
           <Rocket className="size-12" />
           Smart Tech for Bold Builders.
         </h1>
