@@ -33,7 +33,7 @@ const router = createBrowserRouter(
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog" element={<BlogsPage />} />
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/blog/:id" element={<BlogPostPage />} />
       </Route>
       <Route path="/admin" element={<AuthLayout />}>
         <Route index element={<AuthProtecter><AdminPage /></AuthProtecter>} />

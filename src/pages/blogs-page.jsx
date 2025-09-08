@@ -1,7 +1,11 @@
 import SectionHeader from "../components/section-header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { useQuery } from "@tanstack/react-query"
+
+import { getAllBlogPosts } from "../utils/requests";
 
 const BlogsPage = () => {
+
   return (
     <div>
       <SectionHeader
@@ -15,51 +19,82 @@ const BlogsPage = () => {
 };
 
 const AllBlogs = () => {
-  const desc =
-    "In today’s fast-moving digital economy, efficiency isn’t just a nice-to-have — it’s survival. Businesses that still rely on manual processes face bottlenecks, wasted resources, and higher risks of error. That’s where IT automation steps in. Whether you’re running a lean startup or managing an established enterprise, automation can be the difference between lagging behind and leading the market.";
+
+  const {data: blogs, isLoading} = useQuery({
+    queryKey: ["blogs"],
+    queryFn: getAllBlogPosts,
+    select: (data) => data.blogs,
+  })
 
   return (
     <div className="section px-4 !py-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {new Array(8).fill().map((_, i) => (
-          <a
-            href="/blog/new-blog-post"
-            key={`Blog-post-card-${i}`}
+      {
+        isLoading ? (
+          <div>Blog posts loading ... </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {blogs.map((blog, i) => (
+          <BlogCard title={blog.title}
+          id={blog._id}
+           preview_text={blog.preview_text}
+            category={blog.category} 
+            cover_image={blog.cover_image}
+            author={blog.author.username}
+            created_at={blog.createdAt}
+             key={`Blog-post-card-${i}`}
+              />
+        ))}
+      </div>
+        )
+      }
+    </div>
+  );
+};
+
+const BlogCard = ({
+  id,
+  title,
+  category,
+  preview_text,
+  cover_image,
+  author,
+  created_at,
+}) => {
+  return (
+    <a
+            href={`/blog/${id}`}
             className="max-w-[350px] text-white min-h-[500px] bg-base-color"
           >
             <div className="w-full max-h-[200px] overflow-hidden relative">
-              <img src="/empower.jpg" className="w-full h-full object-cover" />
+              <img src={`http://localhost:5500/static/${cover_image}`} className="w-full h-full object-cover" />
                <h3 className="absolute text-xl p-1 px-4 font-semibold top-0 right-0 bg-base-color text-white uppercase">
-                business
+                {category}
               </h3>
             </div>
 
             <div className="p-4 border-b border-gray-200">
               <h2 className="font-semibold text-lg hover:underline">
-                {"How startups and enterprises can leverage IT automation to cut costs, save time, and stay competitive.".slice(
+                {title.length > 60  ? `${title.slice(
                   0,
                   60
                 )}
-                ...
+                ...` : title }
               </h2>
-              <p className="mt-4">{desc.slice(0, 200)}...</p>
+              <p className="mt-4">{preview_text}...</p>
 
               <div className="mt-4 flex-center-y gap-1">
                 <Avatar className="size-12">
                   <AvatarImage src="" />
-                  <AvatarFallback className="text-base-color bg-white font-semibold">BM</AvatarFallback>
+                  <AvatarFallback className="text-base-color bg-white font-semibold uppercase">{author[0]}</AvatarFallback>
                 </Avatar>
-                <p className="text-lg">By <span className="font-semibold underline">Barsmiko</span></p>
+                <p className="text-lg">By <span className="font-semibold underline">{author}</span></p>
               </div>
             </div>
             <div className="p-4">
-                <p className="font-semibold">Sep 4, 2025</p>
+                <p className="font-semibold">{new Date(created_at).toUTCString()}</p>
             </div>
           </a>
-        ))}
-      </div>
-    </div>
-  );
-};
+  )
+}
 
 export default BlogsPage;

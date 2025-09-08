@@ -5,7 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-base-color: #324CAD;
+  --color-base-color: #6394fa;
+  --color-heading: #334cb2;
   --font-roboto: 'Roboto', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
 }

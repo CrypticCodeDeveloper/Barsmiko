@@ -31,7 +31,7 @@ api.interceptors.response.use(
             console.error("API Error:", error.response.data?.message || error.message);
             toast.error(error.response.data?.message || error.message)
             if (error.response.status === 401) {
-                window.location.href = "/login";
+                window.location.href = "/admin/login";
             }
         } else if (error.request) {
             console.error("No response received from server.");
