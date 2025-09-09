@@ -8,15 +8,16 @@ import "react-quill-new/dist/quill.snow.css";
 import { createBlogPost, editBlogPost } from "../utils/requests";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+
 import { id } from "zod/v4/locales";
 
 const CreateBlogForm = ({
     mode = "create", 
-    blog,
+    blog = {},
 }) => {
 
   const { register , handleSubmit, control, reset } = useForm();
-    console.log(blog)
+    // console.log(blog)
 
   useEffect(() => {
     const fillFields = () => {
@@ -24,6 +25,7 @@ const CreateBlogForm = ({
             title: blog?.title,
             content: blog?.content,
             category: blog?.category,
+            cover_image: blog?.cover_image,
         })
     }
 
@@ -31,7 +33,7 @@ const CreateBlogForm = ({
         fillFields()
     }
   
-  }, [blog?.title, blog?.content, blog?.category, mode, reset])
+  }, [blog?.title, blog?.content, blog?.category, mode, blog.cover_image, reset])
   
 
   const {mutateAsync: createBlog, isPending: createBlogPending} = useMutation({

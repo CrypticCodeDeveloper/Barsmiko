@@ -12,6 +12,7 @@ import {
 import { FaqsAccordion } from "../components/faq-accordion";
 import Marquee from "react-fast-marquee";
 import SectionFooterCta from "../components/section-footer.cta";
+import path from "path";
 
 const HomePage = () => {
   return (
@@ -55,12 +56,22 @@ const FAQs = () => {
 
 const Partners = () => {
   const logos = [
-    "/logos/logo1.png",
-    "/logos/logo2.png",
-    "/logos/logo3.png",
-    "/logos/logo4.png",
-    "/logos/logo5.png",
-    "/logos/logo6.png",
+    {
+      path: "/logos/mtn.png",
+      size: "h-16",
+    },
+    {
+      path: "/logos/cloudworkz.png",
+      size: "h-56",
+    },
+    {
+      path: "/logos/palmpay.png",
+      size: "h-56",
+    },
+    {
+      path: "/logos/turing.png",
+      size: "h-12",
+    },
   ];
 
   return (
@@ -79,16 +90,16 @@ const Partners = () => {
         {logos.map((logo, i) => (
           <img
             key={`partner-logo-${i}`}
-            src={logo}
+            src={logo.path}
             alt={`Partner Logo ${i + 1}`}
-            className="h-7 md:h-10 mx-6 md:mx-8"
+            className={`${logo.size} mx-6 md:mx-8`}
           />
         ))}
       </Marquee>
 
-      <p className="text-gray-800 mt-5 text-center">
-        We collaborate with industry leaders, forward-thinking founders, and
-        mission-aligned organizations to bring powerful solutions to life.
+      <p className="text-gray-800 text-lg mt-5 text-center max-w-4xl">
+        We are proud of the diverse experiences our team brings to Barsmiko. Collectively, our staff have contributed their expertise to organizations such as PalmPay, MTN, CloudWorkz, and Turing — experience that now fuels the innovative solutions we deliver to our clients.
+
       </p>
     </div>
   );
@@ -280,13 +291,12 @@ const Hero = () => {
       />
       <div className="w-full h-full bg-gradient-to-r from-white/80 via-white/50 to-transparent absolute -z-10" />
       <div className="h-full w-full flex-center-all flex-col px-4">
-        <h1 className="text-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 flex-center-y flex-col text-center gap-3">
+        <h1 className="text-base-color text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 flex-center-y flex-col text-center gap-3">
           <Rocket className="size-12" />
-          Smart Tech for Bold Builders.
+          Smart Tech for Bold Builders
         </h1>
         <h3 className="text-sm md:text-lg max-w-xl text-center text-gray-800">
-          Build, scale, and automate without the chaos. From fintech to ops,
-          Barsmiko gives you the systems to grow smarter.
+           At Barsmiko, we believe growth shouldn’t come with chaos. Whether you’re in fintech, healthcare, government, or operations, our mission is to give you the digital systems, automation, and scalable platforms that let you build, scale, and thrive with confidence.
         </h3>
 
         <div className="mt-8 lg:mt-4 flex-center-y gap-4">

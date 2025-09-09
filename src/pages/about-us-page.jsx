@@ -151,11 +151,10 @@ const OurMission = () => {
         <div className="flex-center-y flex-col">
           <p className="sub-section-heading uppercase">Our Mission</p>
           <h1 className="sub-section-subheading text-center">
-            Our Mission is to{" "}
             <span className="bg-base-color p-1 font-semibold text-white">
-              Empower
+              Empowering
             </span>{" "}
-            Through Innovation
+             Growth Through Innovation
           </h1>
           <div className="max-w-[500px] lg:w-[500px] min-h-[200px] rounded-md overflow-hidden mt-8 border-2 border-base-color">
             <img
@@ -166,12 +165,12 @@ const OurMission = () => {
           </div>
         </div>
         <div className="flex-center-y flex-col max-lg:flex-col-reverse">
-          <img src="/innovation.svg" className="w-[300px] py-4" alt="" />
+          <img src="/innovation.svg" className="w-[250px] py-4" alt="" />
           <p className="max-w-xl text-lg mt-5 text-gray-800">
-            To help businesses, especially SMEs work smarter, move faster, and
-            grow sustainably through research-backed digital systems, seamless
-            automation, and real innovation. We replace friction with flow, so
-            you can focus on the work that truly matters.
+            At Barsmiko, our mission is simple yet powerful:
+To empower organizations, from SMEs to NGOs, healthcare providers, government agencies, and enterprises, to work smarter, scale faster, and grow sustainably through research-driven digital systems, intelligent automation, and true innovation.
+We eliminate friction and replace it with seamless workflows, so every organization can focus on what truly matters, creating impact, driving value, and building the future.
+
           </p>
         </div>
       </div>
