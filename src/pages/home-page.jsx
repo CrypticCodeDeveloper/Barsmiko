@@ -168,12 +168,12 @@ const WhoWeHelp = () => {
       image_path: "/who-we-help/startups.jpg",
     },
     {
-      title: "Fintechs & Financial Service Providers",
+      title: "Fintechs & Financials",
       desc: "We support digital wallets, peer-to-peer transfers, payment platforms, and more especially for underserved markets.",
       image_path: "/who-we-help/fintech.jpg",
     },
     {
-      title: "NGOs & Development Agencies",
+      title: "NGOs & Development",
       desc: "Tech that amplifies your impact. We help you deliver services efficiently and transparently.",
       image_path: "/who-we-help/agencies.jpg",
     },
