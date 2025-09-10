@@ -8,8 +8,8 @@ const ContactPage = () => {
       <SectionHeader
         sectionTitle="CONTACT US"
         sectionSubTitle="Let’s Build Something Smart Together."
-        text="Got questions? Big ideas? Looking to partner or build something custom?
- Fill out the form our team would love to hear from you."
+        text={<p>Got questions? Big ideas? Looking to partner or build something custom? <br /><br />
+ Fill out the form our team would love to hear from you.</p>}
       />
       <Form />
     </div>
@@ -27,7 +27,7 @@ const Form = () => {
   {
     icon: Mail,
     label: "Email",
-    value: "hello@barsmiko.com",
+    value: "info@barsmiko-inc.net",
   },
   {
     icon: Phone,

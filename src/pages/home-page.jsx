@@ -12,13 +12,11 @@ import {
 import { FaqsAccordion } from "../components/faq-accordion";
 import Marquee from "react-fast-marquee";
 import SectionFooterCta from "../components/section-footer.cta";
-import path from "path";
 import Heroslides from "../components/hero-slides";
 
 const HomePage = () => {
   return (
     <section>
-      {/* <Hero /> */}
       <Heroslides />
       <WhatWeDo />
       <WhoWeHelp />
@@ -259,7 +257,7 @@ const WhatWeDo = () => {
         <p className="text-lg md:text-sm lg:text-lg text-gray-900 max-w-xl">
           At Barsmiko, we help businesses grow with less friction and more
           precision. Whether you are an SME, startup, or scaling enterprise, we
-          create digital systems that actually work for you, not against you.
+          create digital systems that actually work for you, not against you. <br /><br />
           From research-driven innovation to smart automation and intuitive
           fintech platforms, we eliminate busywork, boost your bottom line, and
           simplify the way you run your business.
@@ -279,35 +277,6 @@ const WhatWeDo = () => {
             <p className="text-sm">{offering.text}</p>
           </div>
         ))}
-      </div>
-    </div>
-  );
-};
-
-const Hero = () => {
-  return (
-    <div className="w-full h-[90vh] relative">
-      <img
-        src="/hero-image.jpg"
-        className="w-full h-full object-cover absolute -z-10"
-      />
-      <div className="w-full h-full bg-gradient-to-r from-white/80 via-white/50 to-transparent absolute -z-10" />
-      <div className="h-full w-full flex-center-all flex-col px-4">
-        <h1 className="text-base-color text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 flex-center-y flex-col text-center gap-3">
-          <Rocket className="size-12" />
-          Smart Tech for Bold Builders
-        </h1>
-        <h3 className="text-sm md:text-lg max-w-xl text-center text-gray-800">
-           Build, scale, and automate without the chaos. From fintech to ops, Barsmiko gives you the systems to grow smarter.
-        </h3>
-
-        <div className="mt-8 lg:mt-4 flex-center-y gap-4">
-          <button className="btn">Start Building Smarter</button>
-          <button className="btn flex-center-y gap-1 !bg-transparent border border-base-color !text-base-color">
-            Explore Our Solutions
-            <ArrowRight />
-          </button>
-        </div>
       </div>
     </div>
   );

@@ -58,6 +58,8 @@ const Footer = () => {
               ))
             }
           </div>
+
+          <div className="mt-6"><span className="font-bold">Barsmiko</span> © {new Date().getFullYear()} All rights reserved </div>
         </div>
 
     </footer>

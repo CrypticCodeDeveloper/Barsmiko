@@ -15,11 +15,12 @@ const AboutUsPage = () => {
       <SectionHeader
         sectionTitle="ABOUT US"
         sectionSubTitle="Technology That Moves Businesses Forward"
-        text=" Barsmiko started with a simple belief: technology should work for real businesses, not the other way around.
+        text={<p>Barsmiko started with a simple belief: technology should work for real businesses, not the other way around. <br />
 We have seen the hustle: messy spreadsheets, manual tracking, hours wasted on what should be seamless. That’s where we come in.
 We design systems that eliminate chaos, automate the boring stuff, and create clarity for people who just want to run their business better.
 From small teams to scaling startups, we help bold builders simplify, scale, and thrive.
-"
+</p>}
+
       />
       <OurMission />
       <BuildTheFuture />
@@ -165,10 +166,9 @@ const OurMission = () => {
           </div>
         </div>
         <div className="flex-center-y flex-col max-lg:flex-col-reverse">
-          <img src="/innovation.svg" className="w-[250px] py-4" alt="" />
           <p className="max-w-xl text-lg mt-5 text-gray-800">
-            At Barsmiko, our mission is simple yet powerful:
-To empower organizations, from SMEs to NGOs, healthcare providers, government agencies, and enterprises, to work smarter, scale faster, and grow sustainably through research-driven digital systems, intelligent automation, and true innovation.
+            At Barsmiko, our mission is simple yet powerful: <br />
+To empower organizations, from SMEs to NGOs, healthcare providers, government agencies, and enterprises, to work smarter, scale faster, and grow sustainably through research-driven digital systems, intelligent automation, and true innovation. <br /><br />
 We eliminate friction and replace it with seamless workflows, so every organization can focus on what truly matters, creating impact, driving value, and building the future.
 
           </p>
