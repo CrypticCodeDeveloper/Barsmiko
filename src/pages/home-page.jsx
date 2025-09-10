@@ -13,11 +13,13 @@ import { FaqsAccordion } from "../components/faq-accordion";
 import Marquee from "react-fast-marquee";
 import SectionFooterCta from "../components/section-footer.cta";
 import path from "path";
+import Heroslides from "../components/hero-slides";
 
 const HomePage = () => {
   return (
     <section>
-      <Hero />
+      {/* <Hero /> */}
+      <Heroslides />
       <WhatWeDo />
       <WhoWeHelp />
       <WhyBarsmiko />
@@ -284,7 +286,7 @@ const WhatWeDo = () => {
 
 const Hero = () => {
   return (
-    <div className="w-full h-[70vh] relative">
+    <div className="w-full h-[90vh] relative">
       <img
         src="/hero-image.jpg"
         className="w-full h-full object-cover absolute -z-10"
@@ -296,7 +298,7 @@ const Hero = () => {
           Smart Tech for Bold Builders
         </h1>
         <h3 className="text-sm md:text-lg max-w-xl text-center text-gray-800">
-           At Barsmiko, we believe growth shouldn’t come with chaos. Whether you’re in fintech, healthcare, government, or operations, our mission is to give you the digital systems, automation, and scalable platforms that let you build, scale, and thrive with confidence.
+           Build, scale, and automate without the chaos. From fintech to ops, Barsmiko gives you the systems to grow smarter.
         </h3>
 
         <div className="mt-8 lg:mt-4 flex-center-y gap-4">

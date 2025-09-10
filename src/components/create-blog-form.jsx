@@ -47,6 +47,16 @@ const CreateBlogForm = ({
     onSettled: () => reset()
   })
 
+  const {mutateAsync: editBlog, isPending: editBlogPending} = useMutation({
+    mutationFn: () => editBlogPost(),
+    onError: () => {
+        toast.error("Unexpected Error occured. Try again later!")
+    },
+    onSuccess: () => {
+        toast.success("Blog post edited")
+    },
+  })
+
 
   const onSubmit = async (data) => {
 
@@ -56,12 +66,8 @@ const CreateBlogForm = ({
         }
         
         if (mode === "edit" ) {
-            try {
-                await editBlogPost(blog?._id, blogFormData);
-                toast.success("Blog post edited")
-            } catch (error) {
-                toast.error("Failed to edit blog post")
-            }
+          const res = await editBlogPost({...blogFormData, id: blog._id});
+          console.log(res)
         } else {
             createBlog(blogFormData)
         }
@@ -110,8 +116,8 @@ const CreateBlogForm = ({
           <input type="file" className="border-2 border-base-color p-2" {...register("cover_image")} />
         </div>
 
-        <button disabled={createBlogPending} className="btn disabled:bg-gray-600 disabled:hover:bg-gray-700 disabled:cursor-not-allowed" type="submit">
-          {createBlogPending ? "Loading ..." : mode === "edit" ? "Edit blog post" : "Create a blog post"}
+        <button disabled={createBlogPending || editBlogPending} className="btn disabled:bg-gray-600 disabled:hover:bg-gray-700 disabled:cursor-not-allowed" type="submit">
+          {createBlogPending || editBlogPending ? "Loading ..." : mode === "edit" ? "Edit blog post" : "Create a blog post"}
         </button>
       </form>
     </div>

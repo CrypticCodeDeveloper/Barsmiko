@@ -70,9 +70,9 @@ export default function ContactUsForm() {
     <Form  {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-3xl mx-auto py-10">
         
-        <div className="grid grid-cols-12 gap-4">
+     
           
-          <div className="col-span-4">
+
             
         <FormField
           control={form.control}
@@ -91,9 +91,9 @@ export default function ContactUsForm() {
             </FormItem>
           )}
         />
-          </div>
+ 
           
-        </div>
+  
         
         <div className="grid grid-cols-6 md:grid-cols-12 gap-4">
           
@@ -187,7 +187,7 @@ export default function ContactUsForm() {
               <FormLabel className="form-label">What can we help you with?</FormLabel>
               <Select onValueChange={field.onChange} defaultValue="option-1">
                 <FormControl>
-                  <SelectTrigger className="form-input">
+                  <SelectTrigger className="form-input !w-full">
                     <SelectValue placeholder="" />
                   </SelectTrigger>
                 </FormControl>

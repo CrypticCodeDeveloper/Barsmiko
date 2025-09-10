@@ -46,7 +46,7 @@ const Form = () => {
     <div className="section flex-row px-10">
 
         <div>
-            <p className="sub-section-heading">We are Just a Message Away.</p>
+            <p className="sub-section-heading !tracking-normal">We are Just a Message Away</p>
             <ContactUsForm />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">

@@ -16,7 +16,7 @@ const Navbar = () => {
         <div className="flex-center-y gap-5 text-sm">
           <p className="flex-center-y max-md:!hidden gap-1">
             <Mail size={14} />
-            barsmiko@gmail.com
+            info@barsmiko-inc.net
           </p>
 
           <p className="flex-center-y gap-1">
@@ -43,22 +43,6 @@ const Navbar = () => {
         <ul className="flex max-[898px]:hidden gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
-                {
-                  link.target ? (
-                    <a
-                  href={link.href}
-                  target={link?.target}
-                  className={({ isActive }) =>
-                    `${
-                      isActive
-                        ? "text-base-color font-semibold text-lg"
-                        : "text-base"
-                    } hover:text-base-color transition-all`
-                  }
-                >
-                  {link.name}
-                </a>
-                  ) : (
                     <NavLink
                   to={link.href}
                   className={({ isActive }) =>
@@ -71,8 +55,6 @@ const Navbar = () => {
                 >
                   {link.name}
                 </NavLink>
-                  )
-                }
             </li>
           ))}
         </ul>
