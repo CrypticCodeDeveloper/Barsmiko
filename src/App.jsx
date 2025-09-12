@@ -22,11 +22,12 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import AdminPage from "./pages/admin-page";
 
 import AuthProtecter from "./utils/auth-protecter";
+import ErrorPage from "./pages/error-page";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<BaseLayout />}>
+      <Route path="/" element={<BaseLayout />} errorElement={<ErrorPage />}>
         <Route index element={<HomePage />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/services" element={<ServicesPage />} />
@@ -35,7 +36,7 @@ const router = createBrowserRouter(
         <Route path="/blog" element={<BlogsPage />} />
         <Route path="/blog/:id" element={<BlogPostPage />} />
       </Route>
-      <Route path="/admin" element={<AuthLayout />}>
+      <Route path="/admin" element={<AuthLayout />} errorElement={<ErrorPage />}>
         <Route index element={<AuthProtecter><AdminPage /></AuthProtecter>} />
         <Route path="/admin/login" element={<AdminLoginPage />} />
       </Route>
