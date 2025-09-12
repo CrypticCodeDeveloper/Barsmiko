@@ -60,8 +60,6 @@ const CreateBlogForm = ({
   const onSubmit = async (data) => {
 
       const imageFile = data?.cover_image[0]
-      console.log(blog?.cover_image)
-      console.log(imageFile)
 
       const blogFormData = {
         ...data,
