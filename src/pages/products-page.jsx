@@ -11,9 +11,18 @@ import {
 import SectionHeader from "../components/section-header";
 import SectionFooterCta from "../components/section-footer.cta";
 
+import { Helmet } from "react-helmet";
+
 const ProductsPage = () => {
   return (
     <div>
+
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>Barsmiko Products — Business Wallet by Barsmiko | Financial Tools for Entrepreneurs
+</title>
+        </Helmet>
+
       <SectionHeader
         sectionTitle="OUR PRODUCTS"
         sectionSubTitle="Tools That Power Smarter Business"

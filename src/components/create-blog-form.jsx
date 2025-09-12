@@ -5,11 +5,9 @@ import { Input } from "../components/ui/input";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
 
-import { createBlogPost, editBlogPost } from "../utils/requests";
+import { createBlogPost, editBlogPostRequest } from "../utils/requests";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-
-import { id } from "zod/v4/locales";
 
 const CreateBlogForm = ({
     mode = "create", 
@@ -17,7 +15,7 @@ const CreateBlogForm = ({
 }) => {
 
   const { register , handleSubmit, control, reset } = useForm();
-    // console.log(blog)
+   const queryClient = useQueryClient()
 
   useEffect(() => {
     const fillFields = () => {
@@ -25,7 +23,6 @@ const CreateBlogForm = ({
             title: blog?.title,
             content: blog?.content,
             category: blog?.category,
-            cover_image: blog?.cover_image,
         })
     }
 
@@ -42,32 +39,37 @@ const CreateBlogForm = ({
         toast.error("Unexpected Error occured. Confirm if blog was posted and retry.")
     },
     onSuccess: () => {
-        toast.success("New blog post created")
+        queryClient.invalidateQueries(["blogs"]);
+        toast.success("New blog post created");
     },
-    onSettled: () => reset()
   })
 
   const {mutateAsync: editBlog, isPending: editBlogPending} = useMutation({
-    mutationFn: () => editBlogPost(),
+    mutationFn: editBlogPostRequest,
     onError: () => {
         toast.error("Unexpected Error occured. Try again later!")
     },
     onSuccess: () => {
-        toast.success("Blog post edited")
+      queryClient.invalidateQueries(["blogs"]);
+      queryClient.invalidateQueries(["blog", blog?._id]);
+        toast.success("Blog post edited");
     },
   })
 
 
   const onSubmit = async (data) => {
 
+      const imageFile = data?.cover_image[0]
+      console.log(blog?.cover_image)
+      console.log(imageFile)
+
       const blogFormData = {
-          ...data,
-          cover_image: data.cover_image[0],
+        ...data,
+        cover_image: !imageFile && blog?.cover_image ? blog?.cover_image : imageFile,
         }
         
         if (mode === "edit" ) {
-          const res = await editBlogPost({...blogFormData, id: blog._id});
-          console.log(res)
+          editBlog({data: blogFormData, id: blog?._id});
         } else {
             createBlog(blogFormData)
         }
@@ -75,7 +77,7 @@ const CreateBlogForm = ({
 
   return (
     <div>
-      <h3 className="text-base-color mb-4">{mode === "edit" ? "Edit" : "Create"} a new blog post</h3>
+      <h3 className="text-base-color mb-4">{mode === "edit" ? "Edit" : "Create"} blog post</h3>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -114,6 +116,12 @@ const CreateBlogForm = ({
         <div className="flex flex-col gap-2">
           <label className="form-label">Cover Image</label>
           <input type="file" className="border-2 border-base-color p-2" {...register("cover_image")} />
+          {
+            blog?.cover_image && 
+            <div className="h-32 w-32">
+              <img src={blog?.cover_image} className="w-full h-full object-cover" alt="" />
+              </div>
+          }
         </div>
 
         <button disabled={createBlogPending || editBlogPending} className="btn disabled:bg-gray-600 disabled:hover:bg-gray-700 disabled:cursor-not-allowed" type="submit">

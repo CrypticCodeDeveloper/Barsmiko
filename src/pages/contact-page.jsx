@@ -2,9 +2,18 @@ import ContactUsForm from "../components/contact-us-form";
 import SectionHeader from "../components/section-header";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
 
+import { Helmet } from "react-helmet";
+
 const ContactPage = () => {
   return (
     <div>
+
+
+    <Helmet>
+            <meta charSet="utf-8" />
+            <title>Contact Barsmiko | Build With Us</title>
+        </Helmet>
+      
       <SectionHeader
         sectionTitle="CONTACT US"
         sectionSubTitle="Let’s Build Something Smart Together."

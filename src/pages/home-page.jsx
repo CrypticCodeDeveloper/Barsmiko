@@ -14,9 +14,17 @@ import Marquee from "react-fast-marquee";
 import SectionFooterCta from "../components/section-footer.cta";
 import Heroslides from "../components/hero-slides";
 
+import { Helmet } from "react-helmet";
+
 const HomePage = () => {
   return (
     <section>
+
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>Barsmiko — Digital Systems That Scale With You</title>
+        </Helmet>
+
       <Heroslides />
       <WhatWeDo />
       <WhoWeHelp />

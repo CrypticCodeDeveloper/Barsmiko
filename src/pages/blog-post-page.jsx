@@ -10,6 +10,7 @@ import { getBlogPost, deleteBlogPost } from "../utils/requests"
 import { useAuthContext } from "../contexts/auth-context"
 import toast from "react-hot-toast"
 import EditBlogModal from "../components/edit-blog-modal"
+import { Helmet } from "react-helmet"
 
 const BlogPostPage = () => {
   const { user } = useAuthContext()
@@ -37,6 +38,13 @@ const BlogPostPage = () => {
 
   return (
     <div className='min-h-[60vh] p-6 md:p-8 lg:p-10 w-full flex justify-center'>
+
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>Blog</title>
+        </Helmet>
+
+
        {
         isLoading ? (
           <div>Loading ... </div>

@@ -24,11 +24,11 @@ export const getBlogPost = async (id) => {
     return response.data;
 }
 
-export const editBlogPost = async (data) => {
+export const editBlogPostRequest = async ({id, data}) => {
 
     console.log("id: ")
-    console.log(data?.id)
-    const response = await api.put(`/blogs/${data?.id}`, data, {
+    console.log(id)
+    const response = await api.put(`/blogs/${id}`, data, {
         headers: {
             "Content-Type" : "multipart/form-data"
         }

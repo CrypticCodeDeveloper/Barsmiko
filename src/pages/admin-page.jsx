@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import SectionHeader from "../components/section-header";
 import { LogOut } from "lucide-react";
 
@@ -13,6 +14,13 @@ const AdminPage = () => {
 
   return (
     <div>
+
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>Barsmiko Admin</title>
+        </Helmet>
+
+
       <AdminNav />
       <SectionHeader
   sectionTitle="Admin Dashboard"

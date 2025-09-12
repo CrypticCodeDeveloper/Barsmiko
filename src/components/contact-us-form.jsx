@@ -185,7 +185,7 @@ export default function ContactUsForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="form-label">What can we help you with?</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue="option-1">
+              <Select onValueChange={field.onChange} defaultValue="">
                 <FormControl>
                   <SelectTrigger className="form-input !w-full">
                     <SelectValue placeholder="" />

@@ -17,8 +17,10 @@ const EditBlogModal = ({
   <DialogTrigger>
     <button  className="btn">Edit Post</button>
   </DialogTrigger>
-  <DialogContent>
-    <CreateBlogForm mode="edit" blog={blog} />
+  <DialogContent className="overflow-y-auto">
+      <div className="max-h-[70vh] pb-10">
+        <CreateBlogForm mode="edit" blog={blog} />
+      </div>
   </DialogContent>
 </Dialog>
   )

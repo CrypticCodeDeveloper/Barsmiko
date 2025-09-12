@@ -4,10 +4,18 @@ import { useQuery } from "@tanstack/react-query"
 
 import { getAllBlogPosts } from "../utils/requests";
 
+import { Helmet } from "react-helmet";
+
 const BlogsPage = () => {
 
   return (
     <div>
+
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>Blogs</title>
+        </Helmet>
+
       <SectionHeader
         sectionTitle="LATEST NEWS AND ARTICLES"
         sectionSubTitle="Insights at the Speed of Tech"

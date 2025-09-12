@@ -8,10 +8,17 @@ import {
 } from "lucide-react";
 import SectionFooterCta from "../components/section-footer.cta";
 import SectionHeader from "../components/section-header";
+import { Helmet } from "react-helmet";
 
 const AboutUsPage = () => {
   return (
     <div>
+
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>About Us — Barsmiko | Innovation That Works for Real Businesses</title>
+        </Helmet>
+
       <SectionHeader
         sectionTitle="ABOUT US"
         sectionSubTitle="Technology That Moves Businesses Forward"

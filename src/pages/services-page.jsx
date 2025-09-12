@@ -13,9 +13,17 @@ import {
 import SectionHeader from "../components/section-header";
 import SectionFooterCta from "../components/section-footer.cta";
 
+import { Helmet } from "react-helmet";
+
 const ServicesPage = () => {
   return (
     <div>
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>Barsmiko Services — Scalable Digital Solutions for Real Businesses</title>
+        </Helmet>
+
+
       <SectionHeader
         sectionTitle="OUR SERVICES"
         sectionSubTitle="Smarter Services. Seamless Growth."
