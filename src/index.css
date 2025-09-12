@@ -160,6 +160,9 @@
   hr{
     @apply border-t-2 border-dashed border-base-color my-5;
   }
+  button{
+   @apply disabled:!bg-gray-600 disabled:hover:!bg-gray-700 disabled:!cursor-not-allowed
+  }
 }
 
 @layer utilities{

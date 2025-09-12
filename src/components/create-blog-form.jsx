@@ -122,7 +122,7 @@ const CreateBlogForm = ({
           }
         </div>
 
-        <button disabled={createBlogPending || editBlogPending} className="btn disabled:bg-gray-600 disabled:hover:bg-gray-700 disabled:cursor-not-allowed" type="submit">
+        <button disabled={createBlogPending || editBlogPending} className="btn" type="submit">
           {createBlogPending || editBlogPending ? "Loading ..." : mode === "edit" ? "Edit blog post" : "Create a blog post"}
         </button>
       </form>

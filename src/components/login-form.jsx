@@ -16,6 +16,8 @@ import { loginRequest } from "../utils/requests";
 import { useAuthContext } from "../contexts/auth-context";
 
 import { useNavigate } from "react-router";
+import { useMutation } from "@tanstack/react-query"
+import toast from "react-hot-toast";
 
 
 export function LoginForm({ className, ...props }) {
@@ -25,14 +27,25 @@ export function LoginForm({ className, ...props }) {
   const {register, handleSubmit} = useForm()
   const { login } = useAuthContext()
 
-  const onSubmit = async (data) => {
-    const {access_token} = await loginRequest(data)
-    if (access_token) {
-      navigate("/admin")
+  const {mutateAsync, isPending} = useMutation({
+    mutationFn: loginRequest,
+    onSuccess: (data) => {
+      const {access_token} = data;
+
+      if (access_token) {
+        login(access_token);
+        navigate("/admin")
     } else {
       return;
     }
-    login(access_token);
+    },
+    onError: () => {
+      toast.error("Could not log in, try again!")
+    }
+  })
+
+  const onSubmit = async (data) => {
+    mutateAsync(data)
   }
 
   return (
@@ -84,9 +97,9 @@ export function LoginForm({ className, ...props }) {
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <Button type="submit" className="w-full btn">
-                  Login
-                </Button>
+                <button disabled={isPending} type="submit" className="w-full btn">
+                  {isPending ? "Loading ... " : "Login"}
+                </button>
               </div>
             </div>
           </form>
