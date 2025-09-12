@@ -41,6 +41,7 @@ const CreateBlogForm = ({
     onSuccess: () => {
         queryClient.invalidateQueries(["blogs"]);
         toast.success("New blog post created");
+        reset();
     },
   })
 
