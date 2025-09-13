@@ -37,7 +37,7 @@ export const editBlogPostRequest = async ({id, data}) => {
     return response.data;
 }
 
-export const deleteBlogPost = async (id) => {
+export const deleteBlogPost = async ({id}) => {
     const response = await api.delete(`/blogs/${id}`);
     return response.data;
 }

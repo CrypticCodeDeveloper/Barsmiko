@@ -1,5 +1,4 @@
 import axios from "axios";
-import toast from "react-hot-toast";
 
 export const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL || "http://localhost:5500",
@@ -29,7 +28,6 @@ api.interceptors.response.use(
     (error) => {
         if (error.response) {
             console.error("API Error:", error.response.data?.message || error.message);
-            toast.error(error.response.data?.message || error.message)
             if (error.response.status === 401) {
                 window.location.href = "/admin/login";
             }
