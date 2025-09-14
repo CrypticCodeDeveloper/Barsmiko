@@ -14,8 +14,8 @@ export const createBlogPost = async (data) => {
     return response.data;
 }
 
-export const getAllBlogPosts = async () => {
-    const response = await api.get("/blogs");
+export const getAllBlogPosts = async (searchTerm) => {
+    const response = await api.get(`/blogs?search=${searchTerm}`);
     return response.data;
 }
 

@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import SectionHeader from "../components/section-header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useQuery } from "@tanstack/react-query"
@@ -5,6 +6,7 @@ import { useQuery } from "@tanstack/react-query"
 import { getAllBlogPosts } from "../utils/requests";
 
 import { Helmet } from "react-helmet";
+import { Search } from "lucide-react"
 
 const BlogsPage = () => {
 
@@ -26,16 +28,32 @@ const BlogsPage = () => {
   );
 };
 
+const SearchInput = ({setSearchTerm}) => {
+
+  const searchRef = useRef()
+
+  return (
+    <div className="text-black border-2 border-base-color p-1 px-6 flex-center-y min-w-[300px] md:min-w-[450px] lg:min-w-[550px] h-[50px] my-3 ">
+      <input type="text" ref={searchRef} placeholder="Search for blogs ..." className="flex-1 outline-none h-full text-lg font-semibold" />
+      <Search onClick={() => setSearchTerm(searchRef.current.value)} className="text-base-color hover:scale-105 transition-all cursor-pointer" />
+    </div>
+  )
+}
+
 const AllBlogs = () => {
 
+  const [searchTerm, setSearchTerm] = useState("")
+
   const {data: blogs, isLoading} = useQuery({
-    queryKey: ["blogs"],
-    queryFn: getAllBlogPosts,
+    queryKey: ["blogs", searchTerm],
+    queryFn: ({ queryKey }) => getAllBlogPosts(queryKey[1]),
     select: (data) => data.blogs,
   })
 
   return (
-    <div className="section px-4 !py-20">
+    <div  className="section px-4 !py-20">
+      <SearchInput setSearchTerm={setSearchTerm} />
+      <div className="mt-10">
       {
         isLoading ? (
           <h2 className="text-base-color">Blog posts loading ... </h2>
@@ -55,10 +73,11 @@ const AllBlogs = () => {
         ))}
       </div>
           ) : (
-            <h2 className="text-base-color">There is no blog post yet</h2>
+            <h2 className="text-base-color">No blog posts</h2>
           )
         )
       }
+    </div>
     </div>
   );
 };
@@ -103,7 +122,11 @@ const BlogCard = ({
               </div>
             </div>
             <div className="p-4">
-                <p className="font-semibold">{new Date(created_at).toUTCString()}</p>
+                <p className="font-semibold">{new Date(created_at).toLocaleDateString("en-US", {
+                    weekday: "short",
+                    day: "2-digit",
+                    year: "numeric",
+                  })}</p>
             </div>
           </a>
   )
