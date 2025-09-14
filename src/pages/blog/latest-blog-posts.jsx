@@ -9,7 +9,7 @@ const LatestBlogPosts = () => {
   });
 
   return (
-    <div className="min-w-[450px] lg:min-w-[500px] py-12 lg:border-l-2 border-dashed border-gray-600 pl-10">
+    <div className="min-w-[300px] lg:min-w-[500px] py-12 lg:border-l-2 border-dashed border-gray-600 px-4 lg:pl-10">
       <h2>Latest Posts</h2>
       <div className="mt-5">
         {isLoading ? (
