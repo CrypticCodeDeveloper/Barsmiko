@@ -46,7 +46,7 @@ const BlogPostPage = () => {
   };
 
   return (
-    <div className="flex pb-8">
+    <div className="flex max-lg:flex-col py-10">
       <Helmet>
         <meta charSet="utf-8" />
         <title>Blog</title>
@@ -113,15 +113,15 @@ const LatestBlogPosts = () => {
   });
 
   return (
-    <div className="min-w-[500px] py-12 border-l-2 border-dashed border-gray-600 pl-10">
-      <h3>Latest Posts</h3>
+    <div className="min-w-[450px] lg:min-w-[500px] py-12 lg:border-l-2 border-dashed border-gray-600 pl-10">
+      <h2>Latest Posts</h2>
       <div className="mt-5">
         {isLoading ? (
           <h2>Loading ... </h2>
         ) : (
-          <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-1 max-lg:grid-cols-2 max-md:grid-cols-1 pr-5 gap-6">
             {
-              blogs.slice(0, 8).map((blog, i) => (
+              blogs.slice(0, 5).map((blog, i) => (
             <div className="flex gap-2" key={`side-display-blog-${i}`}>
               <div className="w-[100px] h-[80px] overflow-hidden">
                 <img
