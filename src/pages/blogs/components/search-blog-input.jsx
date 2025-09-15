@@ -9,6 +9,7 @@ const SearchBlogInput = ({ setSearchTerm }) => {
       <input
         type="text"
         ref={searchRef}
+        onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search for blogs ..."
         className="flex-1 outline-none h-full text-lg font-semibold"
       />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getAllBlogPosts } from "../../utils/requests";
+import { useDebounce } from "react-use";
 
 import { Helmet } from "react-helmet";
 
@@ -28,9 +29,15 @@ const Blogs = () => {
 
 const AllBlogs = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("")
+
+  
+  useDebounce(() => {
+    setDebouncedSearchTerm(searchTerm)
+  }, 500, [searchTerm])
 
   const { data: blogs, isLoading } = useQuery({
-    queryKey: ["blogs", searchTerm],
+    queryKey: ["blogs", debouncedSearchTerm],
     queryFn: ({ queryKey }) => getAllBlogPosts(queryKey[1]),
     select: (data) => data.blogs,
   });
