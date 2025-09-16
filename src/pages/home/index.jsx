@@ -8,8 +8,12 @@ import FAQs from "./faqs";
 import PageCTA from "../components/page-cta";
 
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router";
 
 const HomePage = () => {
+
+  const navigate = useNavigate()
+
   return (
     <section>
       <Helmet>
@@ -32,7 +36,7 @@ const HomePage = () => {
           },
           {
             text: "Talk to Our Team",
-            onClick: () => alert("Talk to our team"),
+            onClick: () => navigate("/contact"),
           },
         ]}
       />

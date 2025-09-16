@@ -7,7 +7,10 @@ import OurCoreValues from "./our-core-values";
 import MeetTheBrands from "./meet-the-brands";
 import PageCTA from "../components/page-cta";
 
+import { useNavigate } from "react-router";
+
 const AboutUsPage = () => {
+  const navigate = useNavigate()
   return (
     <div>
       <Helmet>
@@ -49,7 +52,7 @@ const AboutUsPage = () => {
           },
           {
             text: "Talk to Our Team",
-            onClick: () => alert("Talk to our team"),
+            onClick: () => navigate("/contact"),
           },
         ]}
       />

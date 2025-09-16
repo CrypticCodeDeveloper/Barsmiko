@@ -6,7 +6,12 @@ import ComingSoonProducts from "./coming-soon-products";
 import WhyWeBuildTheWayWeBuild from "./why-we-build-the-way-we-do";
 import PageCTA from "../components/page-cta";
 
+import { useNavigate } from "react-router";
+
 const ProductsPage = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div>
       <Helmet>
@@ -28,7 +33,7 @@ const ProductsPage = () => {
           },
           {
             text: "Talk to Our Product Team",
-            onClick: () => alert("Talk to Our Product Team"),
+            onClick: () => navigate("/contact"),
           },
         ]}
       />
@@ -45,7 +50,7 @@ const ProductsPage = () => {
           },
           {
             text: "Talk to Our Product Team",
-            onClick: () => alert("Talk to Our Product Team"),
+            onClick: () => navigate("/contact"),
           },
         ]}
       />

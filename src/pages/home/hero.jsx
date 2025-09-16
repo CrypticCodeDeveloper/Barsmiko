@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import { Rocket, ArrowRight, Users, Workflow } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const HeroSection = () => {
   const heroSlides = [
@@ -60,6 +61,9 @@ const HeroSection = () => {
 };
 
 const Hero = ({ img, icon, title, subtitle }) => {
+
+  const navigate = useNavigate()
+
   return (
     <div className="w-full h-[90vh] relative">
       <img src={img} className="w-full h-full object-cover absolute -z-10" />
@@ -75,7 +79,9 @@ const Hero = ({ img, icon, title, subtitle }) => {
 
         <div className="mt-8 lg:mt-4 flex-center-y gap-4">
           <button className="btn">Start Building Smarter</button>
-          <button className="btn flex-center-y gap-1 !bg-transparent border border-base-color !text-base-color">
+          <button 
+          onClick={() => navigate("/services")}
+          className="btn flex-center-y gap-1 !bg-transparent border border-base-color !text-base-color">
             Explore Our Solutions
             <ArrowRight />
           </button>

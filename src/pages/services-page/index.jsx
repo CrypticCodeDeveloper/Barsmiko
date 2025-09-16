@@ -19,16 +19,6 @@ const ServicesPage = () => {
         sectionTitle="OUR SERVICES"
         sectionSubTitle="Smarter Services. Seamless Growth."
         text="At Barsmiko, we deliver the behind-the-scenes tech that moves your business forward with less friction and more precision. Whether you’re building from scratch or optimizing what already works, our systems are crafted to support scale, sustainability, and speed."
-        btns={[
-          {
-            text: "Talk to Our Team",
-            onClick: () => alert("Talk to our team"),
-          },
-          {
-            text: "Explore Solutions",
-            onClick: () => alert("Explore Solutions"),
-          },
-        ]}
       />
       <OurCoreServices />
       <WhyChooseBarsmiko />
