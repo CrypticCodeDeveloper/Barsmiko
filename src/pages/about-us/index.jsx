@@ -48,7 +48,7 @@ const AboutUsPage = () => {
         btns={[
           {
             text: "Start Building With Barsmiko",
-            onClick: () => alert("Start Building With Barsmiko"),
+            onClick: () => navigate("/services"),
           },
           {
             text: "Talk to Our Team",

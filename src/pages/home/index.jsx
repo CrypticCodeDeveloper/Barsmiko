@@ -32,7 +32,7 @@ const HomePage = () => {
         btns={[
           {
             text: "Start Your Journey",
-            onClick: () => alert("Start Your Journey"),
+            onClick: () => navigate("/services"),
           },
           {
             text: "Talk to Our Team",

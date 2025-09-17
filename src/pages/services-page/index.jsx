@@ -5,7 +5,12 @@ import OurCoreServices from "./our-core-services";
 import WhyChooseBarsmiko from "./why-choose-barsmiko";
 import PageCTA from "../components/page-cta";
 
+import { useNavigate } from "react-router";
+
 const ServicesPage = () => {
+
+  const navigate = useNavigate()
+
   return (
     <div>
       <Helmet>
@@ -29,13 +34,10 @@ const ServicesPage = () => {
 
 "
         btns={[
-          {
-            text: "Start a Project",
-            onClick: () => alert("Start a Project"),
-          },
+  
           {
             text: "Book a Free Consultation",
-            onClick: () => alert("Book a Free Consultation"),
+            onClick: () => navigate("/contact"),
           },
         ]}
       />

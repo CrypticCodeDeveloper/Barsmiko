@@ -78,9 +78,9 @@ const Hero = ({ img, icon, title, subtitle }) => {
         </h3>
 
         <div className="mt-8 lg:mt-4 flex-center-y gap-4">
-          <button className="btn">Start Building Smarter</button>
+          <button onClick={() => navigate("/services")} className="btn">Start Building With Us</button>
           <button 
-          onClick={() => navigate("/services")}
+          onClick={() => navigate("/products")}
           className="btn flex-center-y gap-1 !bg-transparent border border-base-color !text-base-color">
             Explore Our Solutions
             <ArrowRight />
