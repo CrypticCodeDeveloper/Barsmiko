@@ -10,7 +10,7 @@ import { navLinks, socials } from "../../constants";
 
 const Navbar = () => {
   return (
-    <nav className="w-full border-b pb-4 border-base-color">
+    <nav className="w-full pb-4 border-base-color">
 
       <div className="w-full h-12 bg-base-color flex-center-y justify-between text-white px-4 lg:px-10">
         <div className="flex-center-y gap-5 text-sm">
@@ -22,11 +22,6 @@ const Navbar = () => {
           <p className="flex-center-y gap-1">
             <LifeBuoy size={18} />
             24/7 Support
-          </p>
-
-          <p className="flex-center-y max-md:!hidden gap-1">
-            <Phone size={14} />
-            +2349042312231
           </p>
         </div>
         <div className="flex-center-y gap-3 md:gap-5">

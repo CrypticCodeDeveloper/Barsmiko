@@ -25,7 +25,7 @@ const AdminPage = () => {
       </div>
       <PageHeader
         sectionTitle="Admin Dashboard"
-        sectionSubTitle="Manage Barsmiko with Ease"
+        sectionSubTitle="Manage Barsmiko Content with Ease"
         text="Create, update, and organize your blog posts—all in one place. Keep your content fresh and your readers engaged."
         btns={[
           {

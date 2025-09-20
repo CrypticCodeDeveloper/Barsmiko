@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 
 import PageHeader from "../components/page-header";
 import FeaturedProducts from "./featured-products";
-import ComingSoonProducts from "./coming-soon-products";
 import WhyWeBuildTheWayWeBuild from "./why-we-build-the-way-we-do";
 import PageCTA from "../components/page-cta";
 
@@ -26,19 +25,8 @@ const ProductsPage = () => {
         sectionTitle="OUR PRODUCTS"
         sectionSubTitle="Tools That Power Smarter Business"
         text=" From financial clarity to operational flow, our products are built to make business easier, not harder. Explore PapayMoni and what’s next from Barsmiko."
-        btns={[
-          {
-            text: "Join the PapayMoni Waitlist",
-            onClick: () => alert("Join the PapayMoni Waitlist"),
-          },
-          {
-            text: "Talk to Our Product Team",
-            onClick: () => navigate("/contact"),
-          },
-        ]}
       />
       <FeaturedProducts />
-      <ComingSoonProducts />
       <WhyWeBuildTheWayWeBuild />
       <PageCTA
         title="Be the First to Try What We’re Building."

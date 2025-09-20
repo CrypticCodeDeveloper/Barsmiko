@@ -14,11 +14,6 @@ const Form = () => {
       value: "info@barsmiko-inc.net",
     },
     {
-      icon: Phone,
-      label: "Phone",
-      value: "+234 (XXX) XXX XXXX",
-    },
-    {
       icon: Clock,
       label: "Working Hours",
       value: "Mon–Fri: 9am–5pm WAT",
